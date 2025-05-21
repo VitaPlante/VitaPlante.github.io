@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VitaPlante - Phytothérapie pour la Fertilité</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ... [styles inchangés - identiques à ta version] ... */
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f6f9f6;
+      color: #333;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #b3d9ff;
+      padding: 10px 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1001;
+    }
+    .menu-toggle {
+      font-size: 28px;
+      cursor: pointer;
+      user-select: none;
+      z-index: 1101;
+    }
+    .marquee-container {
+      flex: 1;
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 0 15px;
+    }
+    .marquee {
+      display: inline-block;
+      animation: scroll-left 15s linear infinite;
+      color: #333;
+      font-weight: 700;
+      font-family: 'Lora', serif;
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .logo img {
+      height: 50px;
+      user-select: none;
+    }
+    #sidebar {
+      position: fixed;
+      left: 0;
+      top: 60px;
+      width: 200px;
+      height: calc(100% - 60px);
+      background-color: #d6f5d6;
+      padding: 15px;
+      display: none;
+      box-sizing: border-box;
+      overflow-y: auto;
+      z-index: 1000;
+    }
+    #sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    #sidebar li {
+      margin-bottom: 20px;
+      cursor: pointer;
+      font-weight: 700;
+      color: #2a5d2a;
+    }
+    #sidebar li:hover {
+      color: #4b8f4b;
+    }
+    main {
+      padding: 20px;
+      margin-left: 0;
+    }
+    .section {
+      display: none;
+      padding-bottom: 100px;
+      min-height: 100vh;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 1100;
+    }
+    .whatsapp-float img {
+      width: 35px;
+      height: 35px;
+    }
+    footer {
+      background-color: #111;
+      color: #eee;
+      padding: 15px 20px;
+      font-size: 0.9em;
+      text-align: center;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #76c893;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    #google_translate_element {
+      position: fixed;
+      top: 65px;
+      right: 15px;
+      z-index: 1102;
+      background: rgba(255,255,255,0.9);
+      padding: 5px 8px;
+      border-radius: 5px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.15);
+      user-select: none;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 8px 10px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1em;
+    }
+    form button.cta {
+      background-color: #4b8f4b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 1em;
+    }
+    form button.cta:hover {
+      background-color: #397339;
+    }
+    .paiement-info {
+      margin-top: 20px;
+      background-color: #e0f2e9;
+      border-left: 5px solid #4b8f4b;
+      padding: 10px 15px;
+      font-weight: 600;
+      color: #2a5d2a;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+      <div class="marquee-container">
+        <div class="marquee">Bienvenue sur VitaPlante - Des solutions naturelles pour tomber enceinte</div>
+      </div>
+      <div class="logo">
+        <img src="images/logo.png" alt="Logo VitaPlante" />
+      </div>
+    </header>
+
+    <nav id="sidebar">
+      <ul>
+        <li onclick="showSection('accueil')">Accueil</li>
+        <li onclick="showSection('apropos')">À propos</li>
+        <li onclick="showSection('boutique')">Boutique</li>
+        <li onclick="showSection('temoignages')">Témoignages</li>
+        <li onclick="showSection('Conseils')">Conseils</li>
+        <li onclick="showSection('contact')">Contact</li>
+        <li onclick="showSection('paiement')">Option de paiement</li>
+      </ul>
+    </nav>
+
+    <main>
+
+      <section id="accueil" class="section">
+        <img src="images/
+photo1.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
+  <div class="welcome-message">
+    
+  </div>
+  <p><strong>Bienvenue sur VitaPlante,</strong><br>
+  votre espace dédié à la phytothérapie naturelle pour la fertilité.</p>
+
+  <p>Ici, nous croyons au pouvoir des plantes pour accompagner le corps dans son équilibre et favoriser une conception naturelle. Grâce à une approche douce, respectueuse et personnalisée, nous vous aidons à retrouver confiance et sérénité dans votre parcours vers la parentalité.</p>
+
+  <p>Notre objectif ? Vous proposer des solutions naturelles, sûres et efficaces, inspirées de la sagesse des plantes médicinales </p>
+  <img src="images/
+photo5.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
+  <p><strong>Explorez</strong> notre boutique, découvrez des <strong>témoignages inspirants</strong>, ou <strong>contactez-nous</strong> pour un accompagnement personnalisé.<br>
+   <img src="images/photo3.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
+   <p><strong> Pourquoi pas vous?</strong>La stérilité n’est pas une fatalité. Avec les bonnes méthodes, le bon accompagnement et les bons choix au bon moment, il est possible de booster naturellement votre fertilité. Notre rôle est de vous guider étape par étape vers cette possibilité.
+
+   <img src="images/photo4.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
+   <p><strong>Pourquoi pas vous aussi?</strong>
+Personne n’est né sans espoir. Dieu n’a créé personne sans potentiel de vie. Parfois, il faut juste un peu d’aide, un bon moment, une main tendue pour raviver la lumière.
+Ensemble, nous vous aiderons à réveiller votre fertilité, à comprendre votre corps, à agir avec foi et confiance. Parce que vous aussi, vous avez le droit de donner la vie.
+
+   <img src="images/photo2.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
+  Chez VitaPlante, vous n’êtes pas seul(e). Vous êtes accompagné(e), écouté(e) et soutenu(e).</p>
+
+  <a href="#boutique" class="cta" onclick="showSection('boutique')">Voir nos produits</a>
+  
+</section>
+     
+
+      <section id="apropos" class="section">
+        <div style="height: 5,1vh; display: flex; justify-content: center; align-items: center;">
+  <h2>À propos de VitaPlante</h2>
+</div>
+        <strong>VitaPlante</strong> est née d'une conviction simple : la nature regorge de ressources précieuses pour accompagner la fertilité et le bien-être. 
+      Face à l'épuisement de nombreuses femmes et couples après des années d’attente, <strong>Dr Hervé KPETONOU</strong> en partenariat avec<strong>ONG SAVOIR D'AFRIQUE+</strong> et <strong>ONG LISAH</strong> avons voulu proposer une approche douce, naturelle et humaine.
+    </p>
+
+    <p>
+      Notre programme repose sur des <strong>plantes médicinales sélectionnées avec soin</strong>, un <strong>accompagnement personnalisé</strong>, et une <strong>écoute attentive</strong> de chaque histoire. 
+      Plus qu’un simple traitement, VitaPlante est un parcours de reconnexion à soi, à son corps, et à son rêve de devenir parent.
+    </p>
+
+    <p>
+      Nous croyons qu’il n’y a <strong>pas d’âge pour espérer</strong>, et pas de honte à demander de l’aide. Chaque témoignage de réussite nous pousse à continuer, 
+      et chaque nouvelle personne que nous accompagnons est une priorité.
+    </p>
+
+    <p style="font-style: italic; text-align: center; margin-top: 2rem;">
+      « VitaPlante, quand la nature soutient la vie »
+    </p>
+
+    <p style="text-align: center; margin-top: 1.5rem;">
+      <i class="fas fa-seedling" style="color: #3c763d;"></i> <strong>Nos valeurs :</strong> Écoute – Bienveillance – Authenticité – Respect
+      
+        <img src="images/Herve.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
+    </p>
+  </div>
+</section>
+
+      </section>
+
+      <section id="boutique" class="section">
+  <div style="height: 10vh; display: flex; justify-content: center; align-items: center;">
+    <h2>Notre boutique</h2>
+  </div>
+
+                        <img src="images/boutique1.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
+        <p>Découvrez nos tisanes et compléments pour soutenir votre bien-être.</p>
+                <img src="images/boutique2.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
+                <p>Peu importe la nature de votre problème, notre mission est de vous apporter une solution efficace, personnalisée et rapide. Grâce à notre expertise et notre engagement, nous mettons tout en œuvre pour répondre à vos besoins dans les plus brefs délais. Votre satisfaction est notre priorité, et nous sommes disponibles à chaque étape pour vous accompagner vers la meilleure issue possible.
+                <img src="images/boutique3.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
+</p>
+        <div id="shopify-buy-button">
+          <p>Quelle que soit votre situation — que vous souffriez de trompes bouchées, de kystes, de fibromes, de règles douloureuses ou de tout autre trouble qui freine votre désir de concevoir — nous sommes là pour vous accompagner. Même si la cause est d'origine masculine, comme une faible production de spermatozoïdes ou une baisse de mobilité, nous vous proposons des solutions naturelles, efficaces et adaptées à votre cas. Ne perdez pas espoir. Avec un accompagnement ciblé et des produits naturels de qualité, vous pouvez retrouver l'équilibre nécessaire à la fertilité. Votre rêve de devenir parent est possible, et nous sommes là pour vous aider à le réaliser.
+          
+                <img src="images/boutique4.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
+
+                <img src="images/boutique5.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
+
+                <img src="images/boutique6.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
+
+                <img src="images/boutique7.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
+
+
+        </div>
+        <p><small>Nos produits ne remplacent pas un avis médical.</small></p>
+        <a href="#paiement" onclick="showSection('paiement')">Voir les options de paiement</a>
+      </section>
+    <section id="temoignages" class="section">
+  <h2>Témoignages</h2>  <div class="testimonial">
+    <h3><span class="icon">❤️</span> Marc</h3>
+    <p><em>"Moi et ma femme Sylvie  sommes mariés jeunes, pleins de rêves, d’amour et surtout, d’envie de construire une grande famille. Mais les années ont passé, et aucun enfant n’est venu illuminer notre foyer. Chaque mois, chaque test négatif devenait une déchirure. Nous avons consulté des spécialistes, fait des examens, suivi des traitements... sans succès.</em></p>
+    <p><em>Les médecins disaient qu’il n’y avait pas de problème. Pourtant, l’enfant ne venait pas. Autour de nous, les grossesses s’enchaînaient... et nous, on pleurait en silence. Dix ans d’attente, de doutes, d’incompréhensions. Nous avons failli tout abandonner.Et puis, VitaPlante. Une approche naturelle, une écoute sincère... Nous avons essayé, ensemble. Trois mois plus tard : un retard, un test, des larmes. C’était positif.</em></p>
+    <p><em>Notre petit garçon est né en pleine santé. Chaque fois que nous le regardons dormir, nous n’oublions pas que c’est VitaPlante qui nous a redonné une chance."</em></p>
+    <p><strong>– Sylvie (1985) & Marc (1982) | 10 ans d’attente – Parents depuis 2024</strong></p>
+  </div>  <div class="testimonial">
+    <h3><span class="icon">🌿</span> Aïcha</h3>
+    <p><em>"Je m’appelle Aïcha, j’ai 45 ans. Pendant plus de 15 ans, j’ai cherché à avoir un enfant. J’ai passé d’innombrables examens… mais rien n’y faisait. Un jour, je suis tombée sur une publication de VitaPlante. J’ai décidé, une fois encore, de croire en une solution.Aujourd’hui, je suis maman. Merci VitaPlante, du fond du cœur. Si mon témoignage peut redonner espoir à d’autres femmes, alors je suis heureuse de le partager."</em></p>
+  </div>  <div class="testimonial">
+    <h3><span class="icon">👨‍👩‍👧</span> Bernard & Sophie</h3>
+    <p><em>"Après 6 ans de tentatives, de traitements épuisants, nous avions perdu tout espoir. Puis un jour, nous avons découvert VitaPlante. L’approche naturelle et bienveillante nous a séduits. Après quelques mois, le miracle : nous attendions notre premier enfant.</em></p>
+    <p><em>Aujourd’hui, nous sommes les heureux parents d’une petite fille. Merci VitaPlante pour son accompagnement plein d’humanité."</em></p>
+  </div>  <div class="testimonial">
+    <h3><span class="icon">✨</span> Élise </h3>
+    
+  <h3>Je m'appelle Elise et mon mari Mathieu</h3>  
+  <p><em>"Nous nous sommes rencontrés à l’université. Très vite, nous avons su que nous voulions fonder une famille. Mais la vie nous a réservé un autre chemin... Un chemin long, semé d’attentes, de déceptions, de silences pesants après chaque test négatif.Pendant 9 longues années, nous avons consulté des spécialistes, tenté des traitements coûteux, subi des examens douloureux, et vu notre entourage agrandir leur famille pendant que nous restions dans le vide. Chaque annonce de grossesse devenait une épreuve, chaque fête des mères, une blessure ouverte.</em></p>  <p><em>Nous avons pensé à abandonner. Nous avons pleuré, beaucoup. Parfois seuls, parfois ensemble. Nous avons failli tout laisser tomber… jusqu’à ce que nous tombions, presque par hasard, sur une publication de VitaPlante.Nous étions sceptiques. Mais quelque chose dans le ton, dans l’approche naturelle, dans les témoignages, nous a touchés. Alors nous avons décidé d’essayer une dernière fois. Sans trop y croire… mais en gardant une lueur d’espoir.Et ce fut le début de notre renaissance. L’écoute, la douceur, les conseils personnalisés… tout était différent. Nous avons suivi le programme de VitaPlante avec patience. Et quelques mois plus tard… un miracle. Notre miracle.</em></p>  <p><em>Le 14 mars dernier, Élise a donné naissance à un petit garçon. Nous l’avons prénommé Noah. Chaque jour à ses côtés est une bénédiction, un cadeau que nous n’osions plus espérer. Merci, VitaPlante, du fond du cœur. Vous avez changé notre vie."</em></p>  <p><strong>–  
+  9 ans d’attente – Parents depuis janvier 2025</strong></p>  
+  
+  </div>  <div class="testimonial">
+    <h3><span class="icon">🌸</span
+  <h3> Clarisse</h3>  
+  <p><em>"J’ai 39 ans. Mon histoire, c’est celle de beaucoup de femmes, mais peu osent la raconter.</em></p>  <p><em>J’ai été mariée trois fois. Trois mariages brisés par le même mot : infertilité. Chaque fois que l’attente devenait trop longue, mes maris finissaient par partir… ou me rejeter. Le dernier, celui en qui j’avais mis tous mes espoirs, m’a humiliée plus que les autres. Après six ans de vie commune sans enfant, il m’a ramené une autre femme à la maison, enceinte. Il a osé dire que c’était pour "assurer sa descendance".Je me souviens encore de ce jour. J’étais dans la cuisine. Il est arrivé avec elle, la main sur son ventre rond, et m’a dit calmement de l’accepter sous mon toit. J’ai souri. J’ai serré les dents. Puis j’ai pris mes affaires, sans crier, sans pleurer. Et je suis partie. La tête haute, le cœur en lambeaux.</em></p>  <p><em>Je suis retournée vivre chez ma sœur, sans rien, juste ma douleur. Je n’avais plus foi en moi, plus de rêves. Jusqu’au jour où une amie m’a parlé de VitaPlante. J’ai ri. Pour moi, c’était trop tard. Mais elle a insisté, m’a montré des témoignages, m’a même payé le premier colis. C’est comme ça que j’ai commencé.Les plantes, les conseils, la bienveillance… quelque chose a changé en moi. J’ai retrouvé mon corps. Je l’ai écouté, soigné, aimé à nouveau. Et puis, deux mois plus tard, ce retard. Ce test. Positif.</em></p>  <p><em>Je suis tombée à genoux. J’ai pleuré toutes les larmes que je n’avais jamais osé laisser couler. Aujourd’hui, je suis maman d’une petite fille. Ma fille. Mon miracle.Je ne souhaite à personne ce que j’ai vécu. Mais je souhaite à toutes celles qui ont perdu espoir de croiser VitaPlante un jour. Parce que même quand tout semble fini… il reste toujours une lumière quelque part."</em></p>  <p><strong>– Clarisse (née en 1986)    
+  | 15 ans d’attente – Maman depuis Mars 2025</strong></p>  </div>  
+<div style="text-align:center; margin-top: 30px;">
+  <button onclick="alert('Vous n’avez pas l’autorisation de publier ici. Veuillez contacter notre assistant via le formulaire de contact.'); location.href='#contact';" class="cta">
+    Ajouter votre témoignage
+  </button>
+</div>
+  </div>
+</section><style>
+  .testimonial {
+    background: #f9f9f9;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 4px solid #4CAF50;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+  .testimonial h3 {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+  }
+  .testimonial .icon {
+    font-size: 1.5em;
+    margin-right: 10px;
+  }
+</style>
+        <section id="Conseils" class="section">
+        <h2>Conseils pour booster votre fertilité naturellement</h2>
+        <p>Voici quelques conseils simples pour favoriser votre fertilité :</p>
+        <ul>
+                          <p>Lorsque l’on souhaite avoir un enfant, il est essentiel de prendre soin de sa santé globale, et cela commence souvent par l’alimentation et le mode de vie. Les produits naturels jouent un rôle important dans ce processus en apportant des nutriments essentiels et en soutenant l’équilibre hormonal du corps.
+
+Les aliments non transformés, riches en vitamines et minéraux, tels que les fruits, les légumes, les graines, les noix et les céréales complètes, contribuent à améliorer la qualité des ovules et du sperme. Par exemple, les antioxydants présents dans les baies, les vitamines du groupe B, le zinc, le fer et les oméga-3 sont tous bénéfiques pour la fertilité.
+
+Les plantes médicinales, comme le gattilier (vitex), le maca ou encore l’huile d’onagre, sont aussi réputées pour réguler les cycles hormonaux et renforcer les chances de conception de manière naturelle. Toutefois, leur utilisation doit être encadrée par un professionnel de santé.
+
+En plus de leurs effets physiques, les produits naturels favorisent aussi le bien-être mental, ce qui est important car le stress peut nuire à la fertilité. Adopter une hygiène de vie naturelle, c’est aussi privilégier un environnement sain, éviter les produits chimiques et favoriser un équilibre corps-esprit.
+</p>
+          <li>Adoptez une alimentation équilibrée et riche en antioxydants.</li>
+          <li>Réduisez le stress avec des techniques comme la méditation ou le yoga.</li>
+          <li>Évitez l’alcool, le tabac et les produits chimiques nocifs.</li>
+          <li>Utilisez des plantes comme le gattilier, l’ortie ou la camomille selon les recommandations.</li>
+          <li>Consultez régulièrement un spécialiste pour suivre votre évolution.</li>
+        </ul>
+        <p>Pour des conseils personnalisés, n'hésitez pas à <a href="#contact" onclick="showSection('contact')">nous contacter</a>.</p>
+      </section>
+
+      <section id="contact" class="section">
+        <h2>Contactez-nous</h2>
+        <form action="https://formsubmit.co/vitaplante01@gmail.com" method="POST">
+          <input type="text" name="name" placeholder="Votre nom" required />
+          <input type="email" name="email" placeholder="Votre email" required />
+          <textarea name="message" placeholder="Votre message" required></textarea>
+          <button type="submit" class="cta">Envoyer</button>
+        </form>
+        <p><strong>Email :</strong> vitaplante01@gmail.com</p>
+        <p><strong>Téléphone :</strong> +229 56077109 (Bénin, Cotonou)</p>
+        </p>
+      </section>
+      
+      <section id="paiement" class="section">       
+        <div class="paiement-info">
+          <p><strong>Options de paiement :</strong></p>
+          <p>Western Union, MoneyGram et Ria</p>
+          <li>Nom: KPETONOU</li>
+          <li>Prénom: Herve</li>
+          <li>Pays: BENIN</li>
+          <p>Orange money :</p>
+          <li>+229 0167 070 907 ; le nom c’est KPETONOU Herve</li>
+          <p>Ces solutions sont simples et sécurisées</p>
+          <p>NB: Expédition rapide dans le monde entier via DHL Express ou EMS. Livraison estimée entre 72 heures et 7 jours maximum.</p>
+          
+          </section>
+          
+    </main>
+
+    <a href="https://wa.me/22956077109" class="whatsapp-float" target="_blank" aria-label="Contact WhatsApp">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+
+    <div id="google_translate_element"></div>
+
+    <footer>
+      <p>&copy; 2025 VitaPlante – Tous droits réservés | 
+        <a href="#mentions-legales" onclick="showSection('mentions-legales')">Mentions légales</a> | 
+        <a href="#politique-confidentialite" onclick="showSection('politique-confidentialite')">Politique de confidentialité</a>
+      </p>
+    </footer>
+  </div>
+
+  <section id="mentions-legales" class="section" style="display:none; max-width: 800px; margin: 20px auto; padding: 20px;">
+    <h2>Mentions légales</h2>
+    <p>VitaPlante<br />
+    Adresse : Cotonou, Bénin<br />
+    Email : contact@vitaplante.fr<br />
+    Téléphone : +229 56077109</p>
+    <p>Le site est édité par VitaPlante, phytothérapie pour la fertilité.</p>
+    <p>Responsable de la publication : Hervé [Nom]</p>
+    <p>Hébergeur : [Nom de l'hébergeur]</p>
+  </section>
+
+  <section id="politique-confidentialite" class="section" style="display:none; max-width: 800px; margin: 20px auto; padding: 20px;">
+    <h2>Politique de confidentialité</h2>
+    <p>Nous nous engageons à protéger vos données personnelles...</p>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.style.display = (sidebar.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.style.display = 'none';
+      });
+      const s = document.getElementById(id);
+      if(s) s.style.display = 'block';
+      document.getElementById('sidebar').style.display = 'none';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      showSection('accueil');
+    });
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'fr',
+        includedLanguages: 'en,fr,es,de,it,pt,zh-CN,ar',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+ 
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
+</body>
+</html> 
