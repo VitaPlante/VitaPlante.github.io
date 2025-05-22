@@ -166,6 +166,13 @@
       font-weight: 600;
       color: #2a5d2a;
     }
+    <style>
+  .goog-te-gadget-simple .goog-te-gadget-icon {
+    display: none !important;
+  }
+  .goog-te-gadget-simple > span {
+    display: none !important;
+  }
   </style>
 </head>
 <body>
@@ -442,7 +449,7 @@ En plus de leurs effets physiques, les produits naturels favorisent aussi le bie
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
         pageLanguage: 'fr',
-        includedLanguages: 'en,fr,es,de,it,pt,zh-CN,ar',
+        includedLanguages: 'en,fr,es,de,it,pt,
         layout: google.translate.TranslateElement.InlineLayout.SIMPLE
       }, 'google_translate_element');
     }
