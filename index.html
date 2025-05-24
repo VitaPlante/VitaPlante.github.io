@@ -305,33 +305,7 @@ boutique7.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width
         <a href="#paiement" onclick="showSection('paiement')">Voir les options de paiement</a>
       </section>
       
-    <!-- SECTION TÉMOIGNAGES --><section id="temoignages" class="section">
-  <h2>Témoignages</h2>  <!-- Tableau des témoignages -->  <h3>Ce que disent nos clients</h3>
-  <iframe 
-    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS1OO0psQE38rMzFe8K-INgR-GDFc92b9UFEVW9E4dYaZyXK9drUBqSjVMLEHKE5Ch3YkEbKoGF0se1/pubhtml?gid=909312452&single=true&range=A2:D" 
-    width="100%" 
-    height="400" 
-    frameborder="0" 
-    style="border:none;">
-  </iframe>  <!-- Formulaire personnalisé pour témoignage -->  <h3>Témoignages clients</h3>
-  <p>Merci de nous laisser votre témoignage, cela nous aide à améliorer notre service.</p>
-  <form id="temoignageForm">
-    <input type="text" name="nom" placeholder="Votre nom" required><br>
-    <input type="email" name="email" placeholder="Votre adresse email" required><br>
-    <textarea name="temoignage" placeholder="Votre témoignage" required></textarea><br>
-    <button type="submit">Envoyer</button>
-  </form>  <script>
-    const scriptURL = 'https://script.google.com/macros/s/TON_SCRIPT_ID/exec';
-    const form = document.getElementById('temoignageForm');
-
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-        .then(response => alert('Témoignage envoyé avec succès!'))
-        .catch(error => alert('Une erreur est survenue!'));
-      form.reset();
-  </script>
-    </section
+    .
        
       <section id="Conseils" class="section">
         <h2>Conseils pour booster votre fertilité naturellement</h2>
