@@ -307,34 +307,20 @@ boutique7.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width
         <a href="#paiement" onclick="showSection('paiement')">Voir les options de paiement</a>
       </section>
       
-    <!-- SECTION TÉMOIGNAGES --><section id="temoignages" class="section">
-  <h2>Témoignages</h2>  <!-- Tableau des témoignages -->  <h3>Ce que disent nos clients</h3>
-  <iframe 
-    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS1OO0psQE38rMzFe8K-INgR-GDFc92b9UFEVW9E4dYaZyXK9drUBqSjVMLEHKE5Ch3YkEbKoGF0se1/pubhtml?gid=909312452&single=true&range=A2:D" 
-    width="100%" 
-    height="400" 
-    frameborder="0" 
-    style="border:none;">
-  </iframe>  <!-- Formulaire personnalisé pour témoignage -->  <h3>Témoignages clients</h3>
-  <p>Merci de nous laisser votre témoignage, cela nous aide à améliorer notre service.</p>
-  <form id="temoignageForm">
-    <input type="text" name="nom" placeholder="Votre nom" required><br>
-    <input type="email" name="email" placeholder="Votre adresse email" required><br>
-    <textarea name="temoignage" placeholder="Votre témoignage" required></textarea><br>
-    <button type="submit">Envoyer</button>
-  </form>  <script>
-    const scriptURL = 'https://script.google.com/macros/s/TON_SCRIPT_ID/exec';
-    const form = document.getElementById('temoignageForm');
+    
+  <section id="temoignages" class="section">
+  <h2>Témoignages</h2>  <div class="testimonial">
+    <h3><span class="icon">❤️</span> Marc</h3>
+    <p><em>"Moi et ma femme Sylvie  sommes mariés jeunes, pleins de rêves, d’amour et surtout, d’envie de construire une grande famille. Mais les années ont passé, et aucun enfant n’est venu illuminer notre foyer. Chaque mois, chaque test négatif devenait une déchirure. Nous avons consulté des spécialistes, fait des examens, suivi des traitements... sans succès.</em></p>
+    <p><em>Les médecins disaient qu’il n’y avait pas de problème. Pourtant, l’enfant ne venait pas. Autour de nous, les grossesses s’enchaînaient... et nous, on pleurait en silence. Dix ans d’attente, de doutes, d’incompréhensions. Nous avons failli tout abandonner.Et puis, VitaPlante. Une approche naturelle, une écoute sincère... Nous avons essayé, ensemble. Trois mois plus tard : un retard, un test, des larmes. C’était positif.</em></p>
+    <p><em>Notre petit garçon est né en pleine santé. Chaque fois que nous le regardons dormir, nous n’oublions pas que c’est VitaPlante qui nous a redonné une chance."</em></p>
+    <p><strong>– Sylvie (1985) & Marc (1982) | 10 ans d’attente – Parents depuis 2024</strong></p>
+  </div>  <div class="testimonial">
+    <h3><span class="icon">🌿</span> Aïcha</h3>
+    <p><em>"Je m’appelle Aïcha, j’ai 45 ans. Pendant plus de 15 ans, j’ai cherché à avoir un enfant. J’ai passé d’innombrables examens… mais rien n’y faisait. Un jour, je suis tombée sur une publication de VitaPlante. J’ai décidé, une fois encore, de croire en une solution.Aujourd’hui, je suis maman. Merci VitaPlante, du fond du cœur. Si mon témoignage peut redonner espoir à d’autres femmes, alors je suis heureuse de le partager."</em></p>
+  </section>
 
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-        .then(response => alert('Témoignage envoyé avec succès!'))
-        .catch(error => alert('Une erreur est survenue!'));
-      form.reset();
-    });
-  </script></section>
-       
+      
       <section id="Conseils" class="section">
         <h2>Conseils pour booster votre fertilité naturellement</h2>
         <p>Voici quelques conseils simples pour favoriser votre fertilité :</p>
