@@ -305,7 +305,27 @@ boutique7.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width
         <a href="#paiement" onclick="showSection('paiement')">Voir les options de paiement</a>
       </section>
       
-    .
+    <section id="temoignages" class="section">
+  <h2>Témoignages</h2>
+  <div id="liste-temoignages" style="display: flex; flex-direction: column; gap: 1em;"></div>
+</section>
+
+<script>
+  fetch("https://script.google.com/macros/s/AKfycbyTF88uFiJZQ5bqgGnKR3GjUZaqmxquvv1dASeQ3gpFGN6Z6krcnrTk-j8NnhWSdTvs/exec")
+    .then(res => res.json())
+    .then(data => {
+      const container = document.getElementById("liste-temoignages");
+      data.forEach(item => {
+        const div = document.createElement("div");
+        div.style.border = "1px solid #ccc";
+        div.style.padding = "1em";
+        div.style.borderRadius = "10px";
+        div.innerHTML = `<strong>${item.nom}</strong> (${item.email})<br><p>${item.temoignage}</p>`;
+        container.appendChild(div);
+      });
+    })
+    .catch(err => console.error("Erreur de chargement des témoignages :", err));
+</script>
        
       <section id="Conseils" class="section">
         <h2>Conseils pour booster votre fertilité naturellement</h2>
