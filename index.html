@@ -307,15 +307,33 @@ boutique7.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width
       
     <section id="temoignages" class="section">
   <h2>Témoignages</h2>
+
+  <!-- Affichage des témoignages -->
   <div id="liste-temoignages" style="display: flex; flex-direction: column; gap: 1em;"></div>
+
+  <h3 style="margin-top: 2em;">Témoignages clients</h3>
+  <p>Merci de nous laisser votre témoignage, cela nous aide à améliorer notre service.</p>
+
+  <!-- Formulaire d'envoi -->
+  <form id="temoignage-form" style="display: flex; flex-direction: column; gap: 1em; max-width: 400px;">
+    <input type="text" name="nom" placeholder="Nom" required />
+    <input type="email" name="email" placeholder="Adresse email" required />
+    <textarea name="temoignage" placeholder="Votre témoignage" rows="4" required></textarea>
+    <button type="submit">Envoyer</button>
+    <p id="status-message" style="color: green;"></p>
+  </form>
 </section>
 
 <script>
-  fetch("https://script.google.com/macros/s/AKfycbyTF88uFiJZQ5bqgGnKR3GjUZaqmxquvv1dASeQ3gpFGN6Z6krcnrTk-j8NnhWSdTvs/exec")
+  // REMPLACEZ par votre URL Apps Script publique
+  const scriptURL = "https://script.google.com/macros/s/AKfycbyTF88uFiJZQ5bqgGnKR3GjUZaqmxquvv1dASeQ3gpFGN6Z6krcnrTk-j8NnhWSdTvs/exec";
+
+  // Affichage des témoignages
+  fetch(scriptURL)
     .then(res => res.json())
     .then(data => {
       const container = document.getElementById("liste-temoignages");
-      data.forEach(item => {
+      data.reverse().forEach(item => {
         const div = document.createElement("div");
         div.style.border = "1px solid #ccc";
         div.style.padding = "1em";
@@ -325,6 +343,23 @@ boutique7.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width
       });
     })
     .catch(err => console.error("Erreur de chargement des témoignages :", err));
+
+  // Envoi du formulaire
+  document.getElementById("temoignage-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+
+    fetch(scriptURL, { method: "POST", body: data })
+      .then(response => {
+        document.getElementById("status-message").textContent = "Témoignage envoyé avec succès !";
+        form.reset();
+      })
+      .catch(error => {
+        document.getElementById("status-message").textContent = "Erreur lors de l'envoi.";
+        console.error("Erreur d'envoi :", error);
+      });
+
 </script>
        
       <section id="Conseils" class="section">
