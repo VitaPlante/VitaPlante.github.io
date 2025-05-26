@@ -539,6 +539,24 @@ boutique7.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width
           <p>Livraison DHL Express ou EMS Rapide</p>
      
         </section>
+
+      <script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const sideMenu = document.getElementById('side-menu');
+
+  // Ouvrir/fermer en cliquant sur les trois tirets
+  menuToggle.addEventListener('click', function (e) {
+    sideMenu.classList.toggle('open');
+    e.stopPropagation(); // empêcher que le clic ferme immédiatement le menu
+  });
+
+  // Fermer le menu si clic en dehors
+  document.addEventListener('click', function (e) {
+    if (!sideMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+      sideMenu.classList.remove('open');
+    }
+  });
+      </script>
     </main>
 
     <a href="https://wa.me/22956077109" class="whatsapp-float" target="_blank" aria-label="Contact WhatsApp">
