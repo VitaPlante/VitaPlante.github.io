@@ -392,9 +392,9 @@ boutique7.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width
     </section>
         
         
-<section id="Astuces" class="section">
+
+     <section id="Astuces" class="section">
   <h2>Astuces naturelles</h2>
-  <p>Pour des conseils personnalisés, n'hésitez pas à <a href="#contact" onclick="showSection('contact')">nous contacter</a>.</p>
 
   <ul class="astuce-menu">
     <li onclick="showAstuce('douloureuses')">Règles menstruelles douloureuses</li>
@@ -461,34 +461,53 @@ boutique7.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width
       <p>Le jus de chou cru est un remède naturel efficace contre l’ulcère, pris avant les repas.</p>
     </div>
   </div>
+
+  <p style="text-align: center; margin-top: 30px;">
+    Pour des conseils personnalisés, n'hésitez pas à
+    <a href="#contact" onclick="showSection('contact')">nous contacter</a>.
+  </p>
+
+  <p style="text-align: center; margin-top: 10px;">
+    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">Voir les autres astuces</button>
+  </p>
 </section>
 
 <style>
+  h2 {
+    text-align: center;
+  }
+
   .astuce-menu li {
     cursor: pointer;
     padding: 8px;
     color: #007BFF;
   }
+
   .astuce-menu li:hover {
     text-decoration: underline;
   }
+
   .astuce-content {
     display: none;
     margin-top: 15px;
     border-top: 1px solid #ccc;
     padding-top: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 </style>
 
 <script>
   function showAstuce(id) {
-  let elements = document.querySelectorAll('.astuce-content');
-  elements.forEach(el => el.style.display = 'none');
-  let target = document.getElementById(id);
-  target.style.display = 'block';
-  target.scrollIntoView({ behavior: 'smooth' });
-}
-</script>
+    let elements = document.querySelectorAll('.astuce-content');
+    elements.forEach(el => el.style.display = 'none');
+    let target = document.getElementById(id);
+    target.style.display = 'block';
+    target.scrollIntoView({ behavior: 'smooth' });
+  }
+</script> 
+  
+
 
       <section id="contact" class="section">
         <h2>Contactez-nous</h2>
