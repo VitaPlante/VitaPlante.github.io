@@ -482,9 +482,11 @@ boutique7.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width
 
 <script>
   function showAstuce(id) {
-    let elements = document.querySelectorAll('.astuce-content');
-    elements.forEach(el => el.style.display = 'none');
-    document.getElementById(id).style.display = 'block';
+  let elements = document.querySelectorAll('.astuce-content');
+  elements.forEach(el => el.style.display = 'none');
+  let target = document.getElementById(id);
+  target.style.display = 'block';
+  target.scrollIntoView({ behavior: 'smooth' });
   }
 </script>
 
