@@ -1,380 +1,1750 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <style>
-  .goog-te-gadget-simple .goog-te-gadget-icon {
-    display: none !important;
-  }
-  .goog-te-gadget-simple > span {
-    display: none !important;
-  }
-  </style>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VitaPlante - Phytothérapie pour la Fertilité</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+<!DOCTYPE html>  <html lang="fr">  
+<head>  
+  <style>  
+  .goog-te-gadget-simple .goog-te-gadget-icon {  
+    display: none !important;  
+  }  
+  .goog-te-gadget-simple > span {  
+    display: none !important;  
+  }  
+  </style>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />  
+  <title>VitaPlante - Phytothérapie pour la Fertilité</title>  
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />  <!-- Google tag (gtag.js) -->  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7WE6XFF4VP"></script>  <script>  
+  window.dataLayer = window.dataLayer || [];  
+  function gtag(){dataLayer.push(arguments);}  
+  gtag('js', new Date());  
   
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7WE6XFF4VP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  gtag('config', 'G-7WE6XFF4VP');  
+</script>    <style>  
+       /* ... [styles inchangés - identiques à ta version] ... */  
+   body {  
+      margin: 0;  
+      padding: 0;  
+      overflow-x: hidden;  
+      font-family: 'Open Sans', sans-serif;  
+      background-color: #f6f9f6;  
+      color: #333;  
+    }  
+    header {  
+      display: flex;  
+      justify-content: space-between;  
+      align-items: center;  
+      background-color: #b3d9ff;  
+      padding: 10px 15px;  
+      position: sticky;  
+      top: 0;  
+      z-index: 1001;  
+    }  
+    .menu-toggle {  
+  font-size: 32px; /* Légèrement plus grand */  
+  cursor: pointer;  
+  user-select: none;  
+  z-index: 1101;  
+    }  
+    .marquee-container {  
+      flex: 1;  
+      overflow: hidden;  
+      white-space: nowrap;  
+      margin: 0 15px;  
+    }  
+    .marquee {  
+      display: inline-block;  
+      animation: scroll-left 15s linear infinite;  
+      color: #333;  
+      font-weight: 700;  
+      font-family: 'Lora', serif;  
+    }  
+    @keyframes scroll-left {  
+      0% { transform: translateX 100%; }  
+      100% { transform: translateX(-100%); }  
+    }  
+    .logo img {  
+      height: 50px;  
+      user-select: none;  
+    }  
+  #sidebar {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(135deg, #d6f5d6, #bde5bd);
+  padding: 30px 20px; /* 🔥 propre */
+  display: none;
+  box-sizing: border-box;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-  gtag('config', 'G-7WE6XFF4VP');
-</script>
+#sidebar li {
+  background: white;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2a5d2a;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+#sidebar li:hover {
+  background: #4b8f4b;
+  color: white;
+  transform: scale(1.03);
+}
+    main {  
+      padding: 20px;  
+      margin-left: 0;  
+    }  
+    .section {  
+      display: none;  
+      padding-bottom: 100px;  
+      min-height: 100vh;  
+      max-width: 800px;  
+      margin top : 0 auto;  
+      
+    }  
+    .whatsapp-float {  
+      position: fixed;  
+      bottom: 20px;  
+      right: 20px;  
+      background: #25d366;  
+      border-radius: 50%;  
+      width: 60px;  
+      height: 60px;  
+      display: flex;  
+      align-items: center;  
+      justify-content: center;  
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);  
+      z-index: 1100;  
+    }  
+    .whatsapp-float img {  
+      width: 35px;  
+      height: 35px;  
+    }  
+    footer {  
+      background-color: #111;  
+      color: #eee;  
+      padding: 15px 20px;  
+      font-size: 0.9em;  
+      text-align: center;  
+      margin-top: 40px;  
+    }  
+    footer a {  
+      color: #76c893;  
+      text-decoration: none;  
+      margin: 0 8px;  
+    }  
+    footer a:hover {  
+      text-decoration: underline;  
+    }  
+    #google_translate_element {  
+      position: fixed;  
+      top: 65px;  
+      right: 15px;  
+      z-index: 1102;  
+      background: rgba(255,255,255,0.9);  
+      padding: 5px 8px;  
+      border-radius: 5px;  
+      box-shadow: 0 0 6px rgba(0,0,0,0.15);  
+      user-select: none;  
+    }  
+    form input, form textarea {  
+      width: 100%;  
+      padding: 8px 10px;  
+      margin: 8px 0;  
+      box-sizing: border-box;  
+      border: 1px solid #ccc;  
+      border-radius: 4px;  
+      font-family: 'Open Sans', sans-serif;  
+      font-size: 1em;  
+    }  
+    form button.cta {  
+      background-color: #4b8f4b;  
+      color: white;  
+      border: none;  
+      padding: 10px 20px;  
+      cursor: pointer;  
+      border-radius: 4px;  
+      font-weight: 700;  
+      font-size: 1em;  
+    }  
+    form button.cta:hover {  
+      background-color: #397339;  
+    }  
+    .paiement-info {  
+      margin-top: 20px;  
+      background-color: #e0f2e9;  
+      border-left: 5px solid #4b8f4b;  
+      padding: 10px 15px;  
+      font-weight: 600;  
+      color: #2a5d2a;  
+      }  
+      #boutique {  
+  padding-left: 20px;  
+  padding-right: 20px;  
   
-  <style>
-       /* ... [styles inchangés - identiques à ta version] ... */
-   body {
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-      font-family: 'Open Sans', sans-serif;
-      background-color: #f6f9f6;
-      color: #333;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #b3d9ff;
-      padding: 10px 15px;
-      position: sticky;
-      top: 0;
-      z-index: 1001;
-    }
-    .menu-toggle {
-  font-size: 32px; /* Légèrement plus grand */
+      }  
+    #temoignage{  
+      padding-left:20px;  
+      padding-right:20px;  
+    }  
+    .products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.price {
+  color: #2a5d2a;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+/* Pagination */
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination span {
+  margin: 5px;
+  padding: 8px 12px;
+  background: #d6f5d6;
+  border-radius: 5px;
   cursor: pointer;
-  user-select: none;
-  z-index: 1101;
-    }
-    .marquee-container {
-      flex: 1;
-      overflow: hidden;
-      white-space: nowrap;
-      margin: 0 15px;
-    }
-    .marquee {
-      display: inline-block;
-      animation: scroll-left 15s linear infinite;
-      color: #333;
-      font-weight: 700;
-      font-family: 'Lora', serif;
-    }
-    @keyframes scroll-left {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-    .logo img {
-      height: 50px;
-      user-select: none;
-    }
-    #sidebar {
-      position: fixed;
-      left: 0;
-      top: 60px;
-      width: 200px;
-      height: calc(100% - 60px);
-      background-color: #d6f5d6;
-      padding: 15px;
-      display: none;
-      box-sizing: border-box;
-      overflow-y: auto;
-      z-index: 1000;
-    }
-    #sidebar ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    #sidebar li {
-      margin-bottom: 20px;
-      cursor: pointer;
-      font-weight: 700;
-      color: #2a5d2a;
-    }
-    #sidebar li:hover {
-      color: #4b8f4b;
-    }
-    main {
-      padding: 20px;
-      margin-left: 0;
-    }
-    .section {
-      display: none;
-      padding-bottom: 100px;
-      min-height: 100vh;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      z-index: 1100;
-    }
-    .whatsapp-float img {
-      width: 35px;
-      height: 35px;
-    }
-    footer {
-      background-color: #111;
-      color: #eee;
-      padding: 15px 20px;
-      font-size: 0.9em;
-      text-align: center;
-      margin-top: 40px;
-    }
-    footer a {
-      color: #76c893;
-      text-decoration: none;
-      margin: 0 8px;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-    #google_translate_element {
-      position: fixed;
-      top: 65px;
-      right: 15px;
-      z-index: 1102;
-      background: rgba(255,255,255,0.9);
-      padding: 5px 8px;
-      border-radius: 5px;
-      box-shadow: 0 0 6px rgba(0,0,0,0.15);
-      user-select: none;
-    }
-    form input, form textarea {
-      width: 100%;
-      padding: 8px 10px;
-      margin: 8px 0;
-      box-sizing: border-box;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 1em;
-    }
-    form button.cta {
-      background-color: #4b8f4b;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      border-radius: 4px;
-      font-weight: 700;
-      font-size: 1em;
-    }
-    form button.cta:hover {
-      background-color: #397339;
-    }
-    .paiement-info {
-      margin-top: 20px;
-      background-color: #e0f2e9;
-      border-left: 5px solid #4b8f4b;
-      padding: 10px 15px;
-      font-weight: 600;
-      color: #2a5d2a;
-      }
-      #boutique {
-  padding-left: 20px;
-  padding-right: 20px;
-      }
-    #temoignage{
-      padding-left:20px;
-      paddong-right:20;
-    }
+}
 
+.pagination .active {
+  background: #4b8f4b;
+  color: white;
+}
+  .more-btn {
+  margin: 8px 0;
+  padding: 6px 10px;
+  background: #2ecc71;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.more-btn:hover {
+  background: #27ae60;
+}
+.ai-guide {
+
+  display: none;
+
+  position: fixed;
+
+  bottom: 20px;
+
+  right: 20px;
+
+  background: white;
+
+  padding: 15px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+
+  max-width: 260px;
+
+  z-index: 9999;
+
+}
+
+/* CROIX */
+
+.ai-close {
+
+  position: absolute;
+
+  top: 5px;
+
+  right: 10px;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  color: #555;
+
+  font-weight: bold;
+
+}
+
+.ai-close:hover {
+
+  color: red;
+
+}
+
+/* BOUTON */
+
+.ai-btn {
+
+  display: inline-block;
+
+  margin-top: 10px;
+
+  padding: 8px 14px;
+
+  background: #27ae60;
+
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 6px;
+
+}
+
+.details-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+gap: 20px;
+margin-top: 20px;
+}
+
+.detail-card {
+background: #fff;
+border-radius: 10px;
+padding: 15px;
+text-align: center;
+box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.detail-card img {
+width: 100%;
+height: 150px;
+object-fit: cover;
+border-radius: 8px;
+}
+
+.details-btn {
+margin-top: 10px;
+padding: 8px 12px;
+background: #0a7cff;
+color: white;
+border: none;
+border-radius: 6px;
+cursor: pointer;
+}
+
+.details-btn:hover {
+background: #0056b3;
+}
+
+.details-intro {
+text-align: center;
+margin-bottom: 15px;
+font-size: 16px;
+}
+/* BLOCS QUESTION / REPONSE */
+
+.details-section hr {
+
+margin: 30px 0;
+
+border: none;
+
+border-top: 1px solid #ddd;
+
+}
+
+
+/* STYLE QUESTION */
+
+.details-section strong {
+
+color: #000;
+
+}
+.hero-slider {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.slides {
+  display: flex;
+  width: calc(300px * 10);
+  animation: scrollSlider 30s linear infinite;
+  gap: 15px;
+}
+
+.slides img {
+  width: 300px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+@keyframes scrollSlider {
+  0% {
+    transform: translateX ;
+  }
+  100% {
+    transform: translateX(-1500px);
+  }
+}
+
+.hero-content {
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 42px;
+  color: #176b3a;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero-buttons,
+.mini-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.hero-buttons button,
+.mini-buttons button,
+.card-box button {
+  background: linear-gradient(135deg, #1f8b4c, #34b56f);
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.hero-buttons button:hover,
+.mini-buttons button:hover,
+.card-box button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.intro-box,
+.cta-final {
+  background: #f8fff9;
+  padding: 35px;
+  border-radius: 20px;
+  margin: 40px 0;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.card-box,
+.stat-box {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.premium-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.stat-box h2 {
+  color: #1f8b4c;
+  font-size: 36px;
+}
   </style>
-</head>
-</body>
-
-<div class="app">
-    <header>
-      <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
-      <div class="marquee-container">
-        <div class="marquee">Bienvenue sur VitaPlante - Des solutions naturelles pour tomber enceinte</div>
-      </div>
-      <div class="logo">
-        <img src="images/logo.png" alt="Logo VitaPlante" />
-    </header>
+  </head>  
+</body> 
+<div class="app">  
+    <header>  
+      <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>  
+      <div class="marquee-container">  
+        <div class="marquee">Bienvenue sur VitaPlante - Des solutions naturelles pour tomber enceinte</div>  
+      </div>  
+      <div class="logo">  
+        <img src="images/logo.png" alt="Logo VitaPlante" />  
+    </header>  
+    <nav id="sidebar">  
+   <ul>
+  <li onclick="showSection('accueil')">🏠 Accueil</li>
+  <li onclick="showSection('apropos')">ℹ️ À propos</li>
+  <li onclick="showSection('boutique')">🛒 Boutique</li>
   
-  <nav id="sidebar">
-      <ul>
-        <li onclick="showSection('accueil')">Accueil</li>
-        <li onclick="showSection('apropos')">À propos</li>
-        <li onclick="showSection('boutique')">Boutique</li>
-        <li onclick="showSection('temoignages')">Témoignages</li>
-        <li onclick="showSection('Astuces')">Astuces</li>
-        <li onclick="showSection('contact')">Contact</li>
-        <li onclick="showSection('paiement')">Option de paiement</li>
-      </ul>
-    </nav>
+   <li onclick="showSection('details')">Détails des maladies</li>
+  
+   
+  <li onclick="showSection('temoignage')">⭐ Témoignages</li>
+  <li onclick="showSection('astuces')">💡 Astuces</li>
+  <li onclick="showSection('contact')">📞 Contact</li>
+   
+  
+  <li onclick="showSection('paiement')">💳 Paiement</li>
+</ul>
+    </nav>  <main>  
 
-    <main>
 
-      <section id="accueil" class="section">
-        <img src="images/
-photo1.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
-  <div class="welcome-message">
+<section id="accueil" class="section active">
+
+  <!-- Slider Premium -->
+  <div class="hero-slider">
+    <div class="slides">
+      <img src="images/photo1.jpg" alt="Fertilité naturelle">
+      <img src="images/photo6.jpg" alt="Couple heureux">
+      <img src="images/Beurre de.jpg" alt="Produits VitaPlante">
+      <img src="images/photo2.jpg" alt="Traitement naturel fibromes">
+      <img src="images/photo3.jpg" alt="Traitement kystes">
+      <img src="images/photo4.jpg" alt="Trompes bouchées">
+      <img src="images/P" alt="Grossesse naturelle">
+      <img src="images/photo5.jpg" alt="Accompagnement fertilité">
+      <img src="images/slide9.jpg" alt="Santé féminine">
+      <img src="images/slide10.jpg" alt="Produits naturels VitaPlante">
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <h1>VitaPlante – La fertilité au naturel</h1>
+
+    <p class="subtitle">
+      Retrouvez l’espoir d’avoir un enfant grâce à des solutions naturelles conçues pour les femmes et les couples confrontés aux fibromes, kystes, trompes bouchées, SOPK, infections ou faible fertilité.
+    </p>
+
+    <div class="hero-buttons">
+      <button onclick="showSection('boutique')">🛒 Voir nos produits</button>
+      
+      
+    </div>
+  </div>
+
+  <div class="intro-box">
+    <h2>Pourquoi de nombreuses femmes choisissent VitaPlante ?</h2>
+
+    <p>
+      Nos produits naturels accompagnent les femmes qui souffrent de fibromes, myomes, kystes, trompes bouchées, règles absentes, infections, ovulation faible ou mauvaise qualité des spermatozoïdes.
+    </p>
+
+    <p>
+      Grâce à une approche naturelle et personnalisée, plusieurs couples ont déjà retrouvé l’espoir et réalisé leur rêve de devenir parents.
+    </p>
+
+    <div class="mini-buttons">
+      <button onclick="showSection('details')"> Voir les causes les plus fréquentes de l’infertilité </button>
+      <button onclick="showSection('boutique')">Découvrir la boutique</button>
+    </div>
+  </div>
+
+  <div class="cards-container">
+
+    <div class="card-box">
+      <h3>Fibromes & Myomes</h3>
+      <p>
+        Des solutions naturelles pour aider à réduire les fibromes, calmer les douleurs et améliorer les chances de grossesse.
+      </p>
+   <button onclick="showSection('fibromes')" class="details-btn"> Qu'est ce qu'une fibromes ?</button>
+    </div>
+
+    <div class="card-box">
+      <h3>Kystes & SOPK</h3>
+      <p>
+        Retrouvez un meilleur équilibre hormonal et améliorez votre ovulation naturellement.
+      </p>
+      <button onclick="showSection('kystes')" class="details-btn"> Voir détails sur les kystes</button>
+    </div>
+
+    <div class="card-box">
+      <h3>Trompes bouchées</h3>
+      <p>
+        Découvrez des solutions naturelles pour aider à déboucher les trompes et favoriser la fertilité.
+      </p>
+      <button onclick="showSection('trompes')" class="details-btn"> Voir détails sur les trompes </button>
+    </div>
+
+    <div class="card-box">
+      <h3>Faible fertilité masculine</h3>
+      <p>
+        Des produits pour améliorer la qualité, la mobilité et la quantité des spermatozoïdes.
+      </p>
+      <button onclick="showSection('boutique')">Voir les produits</button>
+    </div>
+
+  </div>
+
+
+
+  <div class="cta-final">
+    <h2>Et si votre miracle commençait aujourd’hui ?</h2>
+
+    <p>
+      Vous avez l'impression d'avoir tout essayé sans succès ? Ne perdez pas espoir.
+
+Le parcours vers la parentalité est parfois long et semé d'obstacles. Chez VitaPlante, nous savons que ce n'est pas seulement une question de chance, mais une question d'équilibre.
+
+La nature possède des clés puissantes pour revitaliser votre fertilité :
+
+<li>Nutrition ciblée : Apport en zinc, fer et oméga-3 pour booster la vitalité.</li>
+
+<li>Soutien hormonal : Des actifs naturels qui travaillent en harmonie avec votre corps.</li>
+
+<li>Sérénité retrouvée : Réduire le stress, c'est libérer votre corps pour mieux concevoir.</li>
+</p>
+<p>Ne laissez plus le doute prendre le dessus. Découvrez comment nos produits naturels peuvent harmoniser votre santé globale.
+
+</p>
+
+    <div class="hero-buttons">
+      <button onclick="showSection('temoignage')">Voir les témoignages</button>
+      <button onclick="showSection('contact')">Prendre contact</button>
+      <button onclick="showSection('paiement')">Commander maintenant</button>
+    </div>
+  </div>
+
+</section>
+
+  <section class="premium-stats">
+    <div class="stat-box">
+      <h2>3000+</h2>
+      <p>Femmes et couples accompagnés</p>
+    </div>
+
+    <div class="stat-box">
+      <h2>92%</h2>
+      <p>Résultats positifs observés</p>
+    </div>
+
+    <div class="stat-box">
+      <h2>100%</h2>
+      <p>Produits naturels</p>
+    </div>
+  </section>
+
+   
+
+</section> 
+<section id="apropos" class="section">  
+    <div style="height: 5,1vh; display: flex; justify-content: center; align-items: center;">
+
+  <h2>À propos de VitaPlante</h2>  
+</div>  
+        <strong>VitaPlante</strong> est née d'une conviction simple : la nature regorge de ressources précieuses pour accompagner la fertilité et le bien-être.   
+      Face à l'épuisement de nombreuses femmes et couples après des années d’attente, <strong>VitaPlante</strong> vous propose une approche douce, naturelle et humaine.  
+    </p>  <p>  
+  Notre programme repose sur des <strong>plantes médicinales sélectionnées avec soin</strong>, un <strong>accompagnement personnalisé</strong>, et une <strong>écoute attentive</strong> de chaque histoire.   
+  Plus qu’un simple traitement, VitaPlante est un parcours de reconnexion à soi, à son corps, et à son rêve de devenir parent.  
+</p>  
+
+<p>  
+  Nous croyons qu’il n’y a <strong>pas d’âge pour espérer</strong>, et pas de honte à demander de l’aide. Chaque témoignage de réussite nous pousse à continuer,   
+  et chaque nouvelle personne que nous accompagnons est une priorité.  
+</p>
+
+  <p><strong> Nous mettons à votre disposition des remèdes naturels très puissant qui neutralisent tous vos problèmes d'infertilité féminine et masculine peut importe le problème que vous avez</p></strong>  
+    <p style="font-style: italic; text-align: center; margin-top: 2rem;">  
+      « VitaPlante, quand la nature soutient la vie »  
+    </p>  <p style="text-align: center; margin-top: 1.5rem;">  
+  <i class="fas fa-seedling" style="color: #3c763d;"></i> <strong>Nos valeurs :</strong> Écoute – Bienveillance – Authenticité – Respect  
+    
+</p>
+
+  </div>  
+</section> 
+
+
+<section 
+
+     id="boutique" class="section">
+
+  <div id="products-container" class="products">
     
   </div>
-  <p><strong>Bienvenue sur VitaPlante,</strong><br>
-  votre espace dédié à la phytothérapie naturelle pour la fertilité.</p>
 
-  <p>Ici, nous croyons au pouvoir des plantes pour accompagner le corps dans son équilibre et favoriser une conception naturelle. Grâce à une approche douce, respectueuse et personnalisée, nous vous aidons à retrouver confiance et sérénité dans votre parcours vers la parentalité.</p>
-
-  <p>Notre objectif ? Vous proposer des solutions naturelles, sûres et efficaces, inspirées de la sagesse des plantes médicinales </p>
-  <img src="images/
-photo5.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
-  <p><strong>Explorez</strong> notre boutique, découvrez des <strong>témoignages inspirants</strong>, ou <strong>contactez-nous</strong> pour un accompagnement personnalisé.<br>
-   <img src="images/photo3.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
-   <p><strong> Pourquoi pas vous?</strong>La stérilité n’est pas une fatalité. Avec les bonnes méthodes, le bon accompagnement et les bons choix au bon moment, il est possible de booster naturellement votre fertilité. Notre rôle est de vous guider étape par étape vers cette possibilité.
-
-   <img src="images/photo4.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
-   <p><strong>Pourquoi pas vous aussi?</strong>
-Personne n’est né sans espoir. Dieu n’a créé personne sans potentiel de vie. Parfois, il faut juste un peu d’aide, un bon moment, une main tendue pour raviver la lumière.
-Ensemble, nous vous aiderons à réveiller votre fertilité, à comprendre votre corps, à agir avec foi et confiance. Parce que vous aussi, vous avez le droit de donner la vie.
-
-   <img src="images/photo2.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
+  <!-- Pagination -->
+  <div id="pagination" class="pagination">
   
-    <p>Lorsque l’on souhaite avoir un enfant, il est essentiel de prendre soin de sa santé globale, et cela commence souvent par l’alimentation et le mode de vie. Les produits naturels jouent un rôle important dans ce processus en apportant des nutriments essentiels et en soutenant l’équilibre hormonal du corps.
+  </div>
+  </section>  
+  
+  
+  <section id="details" class="section">
 
-Les aliments non transformés, riches en vitamines et minéraux, tels que les fruits, les légumes, les graines, les noix et les céréales complètes, contribuent à améliorer la qualité des ovules et du sperme. Par exemple, les antioxydants présents dans les baies, les vitamines du groupe B, le zinc, le fer et les oméga-3 sont tous bénéfiques pour la fertilité.
-, les produits naturels favorisent aussi le bien-être mental, ce qui est important car le stress peut nuire à la fertilité. Adopter une hygiène de vie naturelle, c’est aussi privilégier un environnement sain, éviter les produits chimiques et favoriser un équilibre corps-esprit.
+<h2>Détails des maladies liées à la fertilité</h2>
+
+<p class="details-intro">
+Cliquez sur une maladie pour découvrir les explications complètes,
+les causes possibles et les solutions adaptées.
 </p>
-          <li>Adoptez une alimentation équilibrée et riche en antioxydants.</li>
-          <li>Réduisez le stress avec des techniques comme la méditation ou le yoga.</li>
-          <li>Évitez l’alcool, le tabac et les produits chimiques nocifs.</li>
 
-       <p> Chez VitaPlante, vous n’êtes pas seul(e). Vous êtes accompagné(e), écouté(e) et soutenu(e).</p>   
+<div class="details-grid">
 
-        <a href="#boutique" class="cta" onclick="showSection('boutique')">Voir nos produits</a>
-  
-</section>
-     
+<!-- FIBROMES -->
 
-      <section id="apropos" class="section">
-        <div style="height: 5,1vh; display: flex; justify-content: center; align-items: center;">
-  <h2>À propos de VitaPlante</h2>
+<div class="detail-card">
+<img src="images/fibrome-icon.jpg">
+
+<h3>Fibromes utérins</h3>
+
+<p>
+Comprendre les causes des fibromes, leurs effets sur la fertilité
+et les solutions possibles.
+</p>
+
+<button onclick="showSection('fibromes')" class="details-btn">
+Voir les détails
+</button>
+
 </div>
-        <strong>VitaPlante</strong> est née d'une conviction simple : la nature regorge de ressources précieuses pour accompagner la fertilité et le bien-être. 
-      Face à l'épuisement de nombreuses femmes et couples après des années d’attente, <strong>VitaPlante</strong> vous propose une approche douce, naturelle et humaine.
-    </p>
 
-    <p>
-      Notre programme repose sur des <strong>plantes médicinales sélectionnées avec soin</strong>, un <strong>accompagnement personnalisé</strong>, et une <strong>écoute attentive</strong> de chaque histoire. 
-      Plus qu’un simple traitement, VitaPlante est un parcours de reconnexion à soi, à son corps, et à son rêve de devenir parent.
-    </p>
+<!-- KYSTES -->
 
-    <p>
-      Nous croyons qu’il n’y a <strong>pas d’âge pour espérer</strong>, et pas de honte à demander de l’aide. Chaque témoignage de réussite nous pousse à continuer, 
-      et chaque nouvelle personne que nous accompagnons est une priorité.
-    </p>
-  <p><strong> Nous mettons à votre disposition des remèdes naturels très puissant qui neutralisent tous vos problèmes d'infertilité féminine et masculine peut importe le problème que vous avez</p></strong>
-    <p style="font-style: italic; text-align: center; margin-top: 2rem;">
-      « VitaPlante, quand la nature soutient la vie »
-    </p>
+<div class="detail-card">
+<img src="images/kystes-icon.jpg">
 
-    <p style="text-align: center; margin-top: 1.5rem;">
-      <i class="fas fa-seedling" style="color: #3c763d;"></i> <strong>Nos valeurs :</strong> Écoute – Bienveillance – Authenticité – Respect
-      
-    </p>
-  </div>
+<h3>Kystes (SOPK)</h3>
+
+<p>
+Découvrez comment les kystes et le SOPK peuvent perturber
+l’ovulation et la fertilité.
+</p>
+
+<button onclick="showSection('kystes')" class="details-btn">
+Voir les détails
+</button>
+
+</div>
+
+<!-- TROMPES -->
+
+<div class="detail-card">
+<img src="images/trompes-icon.jpg">
+
+<h3>Trompes bouchées</h3>
+
+<p>
+Comprendre tous les types de trompes bouchées
+et leurs effets sur la conception.
+</p>
+
+<button onclick="showSection('trompes')" class="details-btn">
+Voir les détails
+</button>
+
+</div>
+
+<!-- ENDOMÉTRIOSE -->
+
+<div class="detail-card">
+<img src="images/endometriose-icon.jpg">
+
+<h3>Endométriose</h3>
+
+<p>
+Découvrez les signes, causes et impacts
+de l’endométriose sur la fertilité.
+</p>
+
+<button onclick="showSection('endometriose')" class="details-btn">
+Voir les détails
+</button>
+
+</div>
+
+<!-- INFECTIONS -->
+
+<div class="detail-card">
+<img src="images/infections-icon.jpg">
+
+<h3>Infections</h3>
+
+<p>
+Comprendre les infections qui peuvent empêcher
+une grossesse chez la femme et chez l’homme.
+</p>
+
+<button onclick="showSection('infections')" class="details-btn">
+Voir les détails
+</button>
+
+</div>
+
+</div>
+
+</section>
+ 
+  
+  <section  id="fibromes" class="section details-section">
+    
+
+<h2>Fibromes utérins</h2>
+
+<!-- IMAGE -->
+<div class="detail-image">
+<img src="images/Fibrome detail.png" alt="Fibrome utérin illustration">
+</div>
+
+<div class="question-box">
+
+<h1>Qu'est-ce qu'un fibrome utérin ?</h1>
+
+</div>
+
+<div class="answer-box">
+<p>
+Le fibrome utérin est une masse non cancéreuse qui se développe dans ou autour de l’utérus.
+Beaucoup de femmes vivent avec des fibromes sans le savoir, mais dans certains cas, ils peuvent empêcher une grossesse ou provoquer des douleurs importantes.
+</p>
+</div>
+<div class="question-box">
+<p><strong>❓ Est-ce que les fibromes empêchent de tomber enceinte ?</strong></p>
+
+</div>
+
+<div class="answer-box">
+<p>
+Oui, dans certains cas, les fibromes peuvent empêcher la grossesse en déformant l’utérus, en bloquant l’implantation de l’embryon ou en perturbant l’ovulation.
+</p>
+
+</div>
+
+<div class="question-box">
+<p><strong>❓ Quels sont les signes qui peuvent montrer que j'ai des fibromes ?</strong></p>
+</div>
+<div class="answer-box">
+<ul>
+<li>Règles abondantes ou prolongées</li>
+<li>Douleurs pelviennes</li>
+<li>Ballonnement du ventre</li>
+<li>Difficulté à tomber enceinte</li>
+<li>Fausses couches répétées</li>
+</ul>
+</div>
+
+<div class="question-box">
+<p><strong>❓ Est-ce que  je peux être gueri completement des fibromes ?</strong></p>
+</div>
+
+<div class="answer-box">
+<p>
+Les fibromes peuvent se disparaitre  ou se dissous completement selon les traitements, l’alimentation et l’équilibre hormonal.
+C'est là qui rentre en jeu les produits de Dr Hervé  et un échographie est toujours recommandé avant et après les traitements .
+</p>
+</div>
+
+<div class="question-box">
+<h3>Pourquoi les fibromes apparaissent-ils ?</h3>
+</div>
+
+<div class="answer-box">
+<p>
+Les fibromes apparaissent souvent à cause :
+</p>
+
+<ul>
+<li>Déséquilibre hormonal</li>
+<li>Stress chronique</li>
+<li>Inflammation interne</li>
+<li>Facteurs héréditaires</li>
+<li>Alimentation déséquilibrée</li>
+</ul>
+
+</div>
+<div class="question-box">
+<h3>Comment les solutions naturelles du Docteur Hervé peuvent aider ?</h3>
+</div>
+
+<div class="answer-box">
+<p>
+Les solutions naturelles proposées par le Docteur Hervé sont conçues pour soutenir l’organisme féminin en favorisant :
+</p>
+
+<ul>
+<li>L’équilibre hormonal naturel</li>
+<li>La réduction progressive des inflammations internes</li>
+<li>L’amélioration de la circulation sanguine dans l’utérus</li>
+<li>Le nettoyage naturel de l’organisme</li>
+</ul>
+
+<p>
+Grâce à une utilisation régulière et accompagnée de conseils adaptés, ces solutions peuvent aider le corps à retrouver un meilleur équilibre et favoriser des conditions favorables à la fertilité.
+</p>
+
+</div>
+<div class="question-box">
+<h3>Que dois-je faire si j'ai des fibromes ?</h3>
+</div>
+
+<div class="answer-box">
+  
+<ul>
+<li>Faire une échographie pour connaître leur taille</li>
+<li>Suivre les recommandations adaptées</li>
+<li>Adopter une alimentation équilibrée</li>
+<li>Utiliser des solutions naturelles adaptées à votre situation</li>
+</ul>
+</div>
+
+<a href="#boutique" class="cta">
+Voir les solutions disponibles
+</a>
+   </section>
+   
+    <section  id="kystes" class="section details-section">
+
+
+<h2>Kystes ovariens</h2>
+
+<!-- IMAGE EN HAUT -->
+<div class="detail-image">
+<img src="images/kystes-detail.jpg" alt="Illustration des kystes ovariens">
+</div>
+<div class="question-box">
+<h3>Qu'est-ce qu'un kyste ovarien ?</h3>
+
+</div>
+
+<div class="answer-box">
+<p>
+Un kyste ovarien est une petite poche remplie de liquide qui se développe sur l’ovaire.
+Certaines femmes peuvent avoir un seul kyste, tandis que d'autres peuvent en avoir plusieurs.
+Lorsqu'il y a plusieurs petits kystes sur les ovaires, on parle souvent du <strong>SOPK (Syndrome des Ovaires Polykystiques)</strong>.
+</p>
+</div>
+
+
+<div class="question-box">
+
+<p><strong>❓ Est-ce que les kystes peuvent empêcher une grossesse ?</strong></p>
+</div>
+<div class="answer-box">
+<p>
+Oui, certains kystes peuvent perturber l'ovulation normale.
+Sans ovulation régulière, la grossesse devient difficile ou prend beaucoup de temps.
+</p>
+<div class="question-box">
+<p><strong>❓ Quels sont les signes qui montrent que j'ai des kystes ?</strong></p>
+</div>
+
+<div class="answer-box">
+<ul>
+<li>Règles irrégulières</li>
+<li>Absence de règles pendant plusieurs mois</li>
+<li>Douleurs dans le bas-ventre</li>
+<li>Prise de poids inexpliquée</li>
+<li>Acné persistante</li>
+<li>Difficulté à tomber enceinte</li>
+</ul>
+</div>
+<div class="question-box">
+<p><strong>❓ Est-ce que les kystes peuvent disparaître ?</strong></p>
+</div>
+<div class="answer-box">
+<p>
+Certains petits kystes peuvent disparaître naturellement.
+Mais dans certains cas, ils persistent et nécessitent un accompagnement adapté pour favoriser leur réduction et améliorer le fonctionnement hormonal.
+</p>
+</div>
+<div class="question-box">
+<h3>Pourquoi les kystes apparaissent-ils ?</h3>
+</div>
+<div class="answer-box">
+<p>
+Les kystes ovariens apparaissent souvent à cause :
+</p>
+
+
+
+<ul>
+<li>Déséquilibre hormonal</li>
+<li>Ovulation irrégulière</li>
+<li>Stress prolongé</li>
+<li>Mauvaise alimentation</li>
+<li>Excès d’hormones masculines</li>
+</ul>
+</div>
+
+<div class="question-box">
+<h3>Quel est le lien entre SOPK et infertilité ?</h3>
+</div>
+
+<div class="answer-box">
+<p>
+Le SOPK est l'une des causes les plus fréquentes d'infertilité chez la femme.
+Il empêche souvent la libération régulière des ovules, ce qui réduit les chances de conception.
+Cependant, avec une prise en charge adaptée, beaucoup de femmes réussissent à retrouver un cycle régulier.
+</p>
+</div>
+<div class="question-box">
+<h3>Comment les solutions naturelles du Docteur Hervé peuvent aider ?</h3>
+</div>
+
+<div class="answer-box">
+<p>
+Les solutions naturelles proposées visent à soutenir l'organisme féminin en favorisant :
+</p>
+
+<ul>
+<li>L’équilibre hormonal naturel</li>
+<li>L’amélioration de l’ovulation</li>
+<li>La réduction progressive des déséquilibres internes</li>
+<li>Le soutien du fonctionnement des ovaires</li>
+</ul>
+
+<p>
+Avec une utilisation régulière accompagnée de conseils adaptés, ces solutions peuvent aider à améliorer les conditions naturelles nécessaires à la fertilité.
+</p>
+</div>
+
+<div class="question-box">
+<h3>Que dois-je faire si j'ai des kystes ?</h3>
+</div>
+
+<div class="answer-box">
+<ul>
+<li>Faire une échographie pelvienne</li>
+<li>Suivre l’évolution des ovaires</li>
+<li>Adopter une alimentation équilibrée</li>
+<li>Suivre un accompagnement adapté</li>
+</ul>
+</div>
+<a href="#boutique" class="cta">
+Voir les solutions disponibles
+</a>
+
+<hr>
+
+<h2> SOPK (Syndrome des Ovaires Polykystiques)</h2>
+
+<!-- IMAGE SOPK -->
+<div class="detail-image">
+<img src="images/sopk-detail.jpg" alt="Illustration du SOPK">
+</div>
+<div class="question-box">
+<h3>Qu'est-ce que le SOPK ?</h3>
+</div>
+
+<div class="answer-box">
+<p>
+Le SOPK (Syndrome des Ovaires Polykystiques) est une condition dans laquelle les ovaires contiennent plusieurs petits kystes.
+Cela perturbe souvent l’ovulation et rend la grossesse difficile.
+Beaucoup de femmes vivent avec le SOPK sans le savoir pendant des années.
+</p>
+</div>
+
+
+<div class="question-box">
+
+<p><strong>❓ Pourquoi mes règles sont irrégulières ?</strong></p>
+</div>
+
+<div class="answer-box">
+<p>
+Dans le SOPK, les hormones sont déséquilibrées.
+Cela empêche les ovaires de libérer un ovule régulièrement, ce qui provoque des retards ou une absence de règles.
+</p>
+</div>
+
+<div class="question-box">
+<p><strong>❓ Est-ce que je peux tomber enceinte avec le SOPK ?</strong></p>
+</div>
+<div class="answer-box">
+<p>
+Oui, certaines femmes atteintes du SOPK peuvent tomber enceinte, mais cela peut prendre plus de temps.
+Avec un accompagnement adapté, il est possible d’améliorer les chances d’ovulation.
+</p>
+</div>
+<div class="question-box">
+<p><strong>❓ Pourquoi je prends du poids facilement ?</strong></p>
+</div>
+
+<div class="answer-box">
+<p>
+Le SOPK peut perturber le métabolisme du sucre et provoquer une prise de poids, surtout au niveau du ventre.
+</p>
+</div>
+<div class="question-box">
+<p><strong>❓ Pourquoi j'ai de l’acné ou des poils inhabituels ?</strong></p>
+</div>
+<div class="answer-box">
+<p>
+Le SOPK peut provoquer un excès d’hormones masculines.
+Cela peut entraîner :
+</p>
+
+<ul>
+<li>Acné persistante</li>
+<li>Poils sur le visage ou le corps</li>
+<li>Chute de cheveux</li>
+</ul>
+
+</div>
+<div class="question-box">
+<h3>⚠️ Signes possibles du SOPK</h3>
+</div>
+<div class="answer-box">
+<ul>
+<li>Règles irrégulières</li>
+<li>Absence d’ovulation</li>
+<li>Prise de poids rapide</li>
+<li>Fatigue persistante</li>
+<li>Infertilité prolongée</li>
+<li>Acné fréquente</li>
+<li>Poils excessifs</li>
+</ul>
+
+</div>
+
+<div class="question-box">
+
+<h3>Pourquoi le SOPK apparaît-il ?</h3>
+</div>
+
+<div class="answer-box">
+<ul>
+<li>Déséquilibre hormonal</li>
+<li>Résistance à l’insuline</li>
+<li>Facteurs héréditaires</li>
+<li>Stress prolongé</li>
+<li>Mauvaise alimentation</li>
+</ul>
+</div>
+<div class="question-box">
+
+<h3>🌿 Comment les solutions naturelles du Docteur Hervé peuvent m'aider ?</h3>
+</div>
+
+<div class="answer-box">
+<p>
+Les solutions naturelles proposées visent à soutenir l'organisme en favorisant :
+</p>
+
+<ul>
+<li>L’équilibre hormonal naturel</li>
+<li>L'amélioration de l’ovulation</li>
+<li>La réduction des déséquilibres internes</li>
+<li>L'amélioration du fonctionnement des ovaires</li>
+</ul>
+
+<p>
+Avec une utilisation régulière accompagnée de conseils adaptés, ces solutions peuvent contribuer à améliorer les conditions naturelles nécessaires à une conception.
+</p>
+
+</div>
+
+<div class="question-box">
+
+<h3>📌 Que dois-je faire si je pense avoir le SOPK ?</h3>
+
+</div>
+
+<div class="answer-box">
+<ul>
+<li>Faire une échographie pelvienne</li>
+<li>Vérifier l’état des ovaires</li>
+<li>Surveiller les cycles menstruels</li>
+<li>Adopter une alimentation équilibrée</li>
+<li>Suivre un accompagnement adapté</li>
+</ul>
+</div>
+<a href="#boutique" class="cta">
+Voir les solutions disponibles
+</a>
 </section>
 
-      </section>
 
-      <section id="boutique" class="section">
-  <div style="height: 10vh; display: flex; justify-content: center; align-items: center;">
-    <h2>Notre boutique</h2>
-  </div>
 
-                        <img src="images/
-Boutique1.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
-        <p>Découvrez nos tisanes et compléments pour soutenir votre bien-être.</p>
- <img src="images/
-boutique2.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
-                <p>Peu importe la nature de votre problème, notre mission est de vous apporter une solution efficace, personnalisée et rapide. Grâce à notre expertise et notre engagement, nous mettons tout en œuvre pour répondre à vos besoins dans les plus brefs délais. Votre satisfaction est notre priorité, et nous sommes disponibles à chaque étape pour vous accompagner vers la meilleure issue possible.
-                <img src="images/
-boutique3.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
+<section id="trompes" class="section details-section">
+
+<h2> Trompes bouchées</h2>
+
+<!-- IMAGE EN HAUT -->
+<div class="detail-image">
+<img src="images/trompes-detail.jpg" alt="Illustration des trompes bouchées">
+</div>
+<div class="question-box">
+<h3>Qu'est-ce qu'une trompe bouchée ?</h3>
+</div>
+
+<div class="answer-box">
+<p>
+Les trompes de Fallope sont deux petits tubes qui relient les ovaires à l’utérus.
+C’est dans les trompes que se fait normalement la rencontre entre l’ovule et le spermatozoïde.
+Lorsque les trompes sont bouchées, l’ovule ne peut plus rencontrer le spermatozoïde, ce qui empêche la grossesse naturelle.
 </p>
-        <div id="shopify-buy-button">
-          <p>Quelle que soit votre situation — que vous souffriez de trompes bouchées, de kystes, de fibromes, de règles douloureuses ou de tout autre trouble qui freine votre désir de concevoir — nous sommes là pour vous accompagner. Même si la cause est d'origine masculine, comme une faible production de spermatozoïdes ou une baisse de mobilité, nous vous proposons des solutions naturelles, efficaces et adaptées à votre cas. Ne perdez pas espoir. Avec un accompagnement ciblé et des produits naturels de qualité, vous pouvez retrouver l'équilibre nécessaire à la fertilité. Votre rêve de devenir parent est possible, et nous sommes là pour vous aider à le réaliser.
-          
-                <img src="images/
-boutique6.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
-                <img src="images/
-boutique8.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
-<img src="images/
-boutique4.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
 
-                <img src="images/
-boutique5.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
+</div>
+<div class="question-box">
 
-            <img src="images/
-boutique7.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width: 100%; border-radius: 8px;" />
+<p><strong>❓ Est-ce que je peux tomber enceinte avec des trompes bouchées ?</strong></p>
 
-        </div>
-        <p><small>Nos produits ne remplacent pas un avis médical.</small></p>
-        <a href="#paiement" onclick="showSection('paiement')">Voir les options de paiement</a>
-      </section>
-      
-    <section id="temoignages" class="section" style="font-family: 'Times New Roman', Times, serif;">
+</div>
 
-  <h2 style="text-align: center;">Témoignages</h2>  
+<div class="answer-box">
+<p>
+Lorsque les deux trompes sont totalement bouchées, la grossesse naturelle devient très difficile.
+Mais lorsque le problème est identifié tôt et accompagné correctement, certaines femmes retrouvent des conditions favorables à la conception.
+</p>
 
-  <div class="testimonial">
-    <h3><span class="icon">❤️</span> Marc</h3>
-    <p><em>"Moi et ma femme Sylvie  sommes mariés jeunes, pleins de rêves, d’amour et surtout, d’envie de construire une grande famille. Mais les années ont passé, et aucun enfant n’est venu illuminer notre foyer. Chaque mois, chaque test négatif devenait une déchirure. Nous avons consulté des spécialistes, fait des examens, suivi des traitements... sans succès.</em></p>
-    <p><em>Les médecins disaient qu’il n’y avait pas de problème. Pourtant, l’enfant ne venait pas. Autour de nous, les grossesses s’enchaînaient... et nous, on pleurait en silence. Dix ans d’attente, de doutes, d’incompréhensions. Nous avons failli tout abandonner.Et puis, VitaPlante. Une approche naturelle, une écoute sincère... Nous avons essayé, ensemble. Trois mois plus tard : un retard, un test, des larmes. C’était positif.</em></p>
-    <p><em>Notre petit garçon est né en pleine santé. Chaque fois que nous le regardons dormir, nous n’oublions pas que c’est VitaPlante qui nous a redonné une chance."</em></p>
-    <p><strong>– Sylvie (1985) & Marc (1982) | 10 ans d’attente – Parents depuis 2024</strong></p>
-  </div>  
+</div>
 
-  <div class="testimonial">
-    <h3><span class="icon">🌿</span> Aïcha</h3>
-    <p><em>"Je m’appelle Aïcha, j’ai 45 ans. Pendant plus de 15 ans, j’ai cherché à avoir un enfant. J’ai passé d’innombrables examens… mais rien n’y faisait. Un jour, je suis tombée sur une publication de VitaPlante. J’ai décidé, une fois encore, de croire en une solution.Aujourd’hui, je suis maman. Merci VitaPlante, du fond du cœur. Si mon témoignage peut redonner espoir à d’autres femmes, alors je suis heureuse de le partager."</em></p>
-  </div>  
+<div class="question-box">
+<p><strong>❓ Comment savoir si mes trompes sont bouchées ?</strong></p>
+</div>
+<div class="answer-box">
+<p>
+Le seul moyen sûr est de faire un examen appelé :
+</p>
 
-  <div class="testimonial">
-    <h3><span class="icon">👨‍👩‍👧</span> Bernard & Sophie</h3>
-    <p><em>"Après 6 ans de tentatives, de traitements épuisants, nous avions perdu tout espoir. Puis un jour, nous avons découvert VitaPlante. L’approche naturelle et bienveillante nous a séduits. Après quelques mois, le miracle : nous attendions notre premier enfant.</em></p>
-    <p><em>Aujourd’hui, nous sommes les heureux parents d’une petite fille. Merci VitaPlante pour son accompagnement plein d’humanité."</em></p>
-  </div>  
+<ul>
+<li>Hystérosalpingographie (HSG)</li>
+<li>Échographie spécialisée</li>
+<li>Scanner des trompes</li>
+</ul>
 
-  <div class="testimonial">
-    <h3><span class="icon">✨</span> Élise</h3>
-    <h3>Je m'appelle Elise et mon mari Mathieu</h3>  
-    <p><em>"Nous nous sommes rencontrés à l’université. Très vite, nous avons su que nous voulions fonder une famille. Mais la vie nous a réservé un autre chemin... Un chemin long, semé d’attentes, de déceptions, de silences pesants après chaque test négatif.Pendant 9 longues années, nous avons consulté des spécialistes, tenté des traitements coûteux, subi des examens douloureux, et vu notre entourage agrandir leur famille pendant que nous restions dans le vide. Chaque annonce de grossesse devenait une épreuve, chaque fête des mères, une blessure ouverte.</em></p>  
-    <p><em>Nous avons pensé à abandonner. Nous avons pleuré, beaucoup. Parfois seuls, parfois ensemble. Nous avons failli tout laisser tomber… jusqu’à ce que nous tombions, presque par hasard, sur une publication de VitaPlante.Nous étions sceptiques. Mais quelque chose dans le ton, dans l’approche naturelle, dans les témoignages, nous a touchés. Alors nous avons décidé d’essayer une dernière fois. Sans trop y croire… mais en gardant une lueur d’espoir.Et ce fut le début de notre renaissance. L’écoute, la douceur, les conseils personnalisés… tout était différent. Nous avons suivi le programme de VitaPlante avec patience. Et quelques mois plus tard… un miracle. Notre miracle.</em></p>  
-    <p><em>Le 14 mars dernier, Élise a donné naissance à un petit garçon. Nous l’avons prénommé Noah. Chaque jour à ses côtés est une bénédiction, un cadeau que nous n’osions plus espérer. Merci, VitaPlante, du fond du cœur. Vous avez changé notre vie."</em></p>  
-    <p><strong>– 9 ans d’attente – Parents depuis janvier 2025</strong></p>  
-  </div>  
+<p>
+Beaucoup de femmes ne ressentent aucun symptôme visible, ce qui rend le diagnostic difficile sans examen médical.
+</p>
+</div>
 
-  <div class="testimonial">
-    <h3><span class="icon">🌸</span> Clarisse</h3>  
-    <p><em>"J’ai 39 ans. Mon histoire, c’est celle de beaucoup de femmes, mais peu osent la raconter.</em></p>  
-    <p><em>J’ai été mariée trois fois. Trois mariages brisés par le même mot : infertilité. Chaque fois que l’attente devenait trop longue, mes maris finissaient par partir… ou me rejeter. Le dernier, celui en qui j’avais mis tous mes espoirs, m’a humiliée plus que les autres. Après six ans de vie commune sans enfant, il m’a ramené une autre femme à la maison, enceinte. Il a osé dire que c’était pour "assurer sa descendance".Je me souviens encore de ce jour. J’étais dans la cuisine. Il est arrivé avec elle, la main sur son ventre rond, et m’a dit calmement de l’accepter sous mon toit. J’ai souri. J’ai serré les dents. Puis j’ai pris mes affaires, sans crier, sans pleurer. Et je suis partie. La tête haute, le cœur en lambeaux.</em></p>  
-    <p><em>Je suis retournée vivre chez ma sœur, sans rien, juste ma douleur. Je n’avais plus foi en moi, plus de rêves. Jusqu’au jour où une amie m’a parlé de VitaPlante. J’ai ri. Pour moi, c’était trop tard. Mais elle a insisté, m’a montré des témoignages, m’a même payé le premier colis. C’est comme ça que j’ai commencé.Les plantes, les conseils, la bienveillance… quelque chose a changé en moi. J’ai retrouvé mon corps. Je l’ai écouté, soigné, aimé à nouveau. Et puis, deux mois plus tard, ce retard. Ce test. Positif.</em></p>  
-    <p><em>Je suis tombée à genoux. J’ai pleuré toutes les larmes que je n’avais jamais osé laisser couler. Aujourd’hui, je suis maman d’une petite fille. Ma fille. Mon miracle.Je ne souhaite à personne ce que j’ai vécu. Mais je souhaite à toutes celles qui ont perdu espoir de croiser VitaPlante un jour. Parce que même quand tout semble fini… il reste toujours une lumière quelque part."</em></p>  
-    <p><strong>– Clarisse (née en 1986) | 15 ans d’attente – Maman depuis Mars 2025</strong></p>  
-  </div>  
+<div class="question-box">
+<p><strong>❓ Quels sont les signes possibles ?</strong></p>
+</div>
+<div class="answer-box">
+<ul>
+<li>Difficulté à tomber enceinte pendant longtemps</li>
+<li>Douleurs pelviennes fréquentes</li>
+<li>Infections répétées</li>
+<li>Antécédents d'infection génitale</li>
+<li>Fausses couches répétées</li>
+</ul>
 
-  <div style="text-align:center; margin-top: 30px;">
-    <button onclick="alert('Vous n’avez pas l’autorisation de publier ici. Veuillez contacter notre assistant via le formulaire de contact.'); location.href='#contact';" class="cta">
-      Ajouter votre témoignage
-    </button>
-  </div>
+🧠 Toutes les manières possibles qu'une trompe peut être bouchée
+
+Il existe plusieurs types de trompes bouchées.
+</div>
+
+<h3>1️⃣ Trompes totalement bouchées</h3>
+<div class="answer-box">
+<p>
+Dans ce cas, le passage est complètement fermé.
+L’ovule et les spermatozoïdes ne peuvent pas circuler.
+</p>
+
+Causes possibles :
+
+<ul>
+<li>Infections anciennes</li>
+<li>Inflammation chronique</li>
+<li>Adhérences internes</li>
+</ul>
+
+</div>
+
+<h3>2️⃣ Trompes partiellement bouchées</h3>
+<div class="answer-box">
+<p>
+La trompe n’est pas complètement fermée, mais le passage est difficile.
+Cela peut empêcher une grossesse ou provoquer une grossesse extra-utérine.
+</p>
+
+</div>
+
+<h3>3️⃣ Trompes collées</h3>
+<div class="answer-box">
+<p>
+Les trompes peuvent se coller aux tissus voisins à cause d'infections ou d'inflammations.
+Cela empêche leur bon fonctionnement.
+</p>
+
+</div>
+
+<h3>4️⃣ Trompes remplies de liquide (Hydrosalpinx)</h3>
+<div class="answer-box">
+<p>
+Dans ce cas, la trompe contient un liquide inflammatoire.
+Ce liquide peut empêcher la fécondation et perturber l’implantation de l’embryon.
+</p>
+
+</div>
+
+<h3>5️⃣ Trompes endommagées après infection</h3>
+<div class="answer-box">
+<p>
+Certaines infections peuvent abîmer la structure interne des trompes.
+Même si elles ne sont pas complètement bouchées, leur fonctionnement devient difficile.
+</p>
+
+</div>
+
+<h3>6️⃣ Trompes bouchées après avortement ou infection mal traitée</h3>
+
+<div class="answer-box">
+<p>
+Les infections mal soignées peuvent provoquer des cicatrices internes qui bloquent les trompes.
+</p>
+
+</div>
+<div class="question-box">
+⚠️ Pourquoi les trompes se bouchent-elles ?
+</div>
+<div class="answer-box">
+Les causes les plus fréquentes sont :
+
+<ul>
+<li>Infections génitales mal traitées</li>
+<li>Maladies sexuellement transmissibles</li>
+<li>Inflammations répétées</li>
+<li>Endométriose</li>
+<li>Interventions chirurgicales anciennes</li>
+<li>Avortements compliqués</li>
+</ul>
+
+</div>
+<div class="question-box">
+
+ 🌿 Comment les solutions naturelles du Docteur Hervé peuvent m'aider ?
+</div>
+
+<div class="answer-box">
+Les solutions proposées par le Docteur Hervé visent à soutenir l’organisme en favorisant :
+
+<ul>
+<li>La réduction progressive des inflammations internes</li>
+<li>L'amélioration de la circulation dans les organes reproducteurs</li>
+<li>Le soutien des mécanismes naturels de réparation du corps</li>
+<li>L'amélioration de l'environnement interne favorable à la fertilité</li>
+</ul>
+
+<p>
+Avec un accompagnement adapté et une utilisation régulière, ces solutions peuvent contribuer à améliorer les conditions naturelles nécessaires à une conception.
+</p>
+
+</div>
+<div class="question-box">
+
+# 📌 Que dois-je faire si j'ai des trompes bouchées ?
+</div>
+
+<div class="answer-box">
+<ul>
+<li>Faire un examen des trompes</li>
+<li>Identifier le type de blocage</li>
+<li>Suivre les recommandations adaptées</li>
+<li>Maintenir une bonne hygiène intime</li>
+<li>Suivre un accompagnement approprié</li>
+</ul>
+
+</div>
+
+
+<a href="#boutique" class="cta">
+Voir les solutions disponibles
+</a>
+
+</section>
+
+
+<section id="endometriose" class="section details-section">
+
+<h2>Détails complets sur l’Endométriose</h2>
+
+<!-- IMAGE EN HAUT -->
+<div class="detail-image">
+<img src="images/endometriose-detail.jpg" alt="Illustration de l’endométriose">
+</div>
+
+<h3>Qu'est-ce que l’endométriose ?</h3>
+
+<p>
+L’endométriose est une maladie dans laquelle des tissus semblables à ceux de l’utérus se développent en dehors de l’utérus.
+Ces tissus peuvent se retrouver sur les ovaires, les trompes ou d'autres organes internes.
+Cela peut provoquer des douleurs intenses et rendre difficile la grossesse.
+</p>
+
+---
+
+<h3>❓ Si j'avais l’endométriose, quelles questions je me poserais ?</h3>
+
+<p><strong>❓ Est-ce que l’endométriose empêche de tomber enceinte ?</strong></p>
+
+<p>
+Oui, l’endométriose peut réduire les chances de grossesse en provoquant des inflammations, des adhérences ou en perturbant le fonctionnement des ovaires et des trompes.
+Cependant, avec un bon accompagnement et une prise en charge adaptée, certaines femmes arrivent à améliorer leur fertilité.
+</p>
+
+<p><strong>❓ Quels sont les signes qui peuvent montrer que j'ai l’endométriose ?</strong></p>
+
+<ul>
+<li>Douleurs très fortes pendant les règles</li>
+<li>Douleurs dans le bas-ventre</li>
+<li>Douleurs pendant les rapports sexuels</li>
+<li>Fatigue chronique</li>
+<li>Difficulté à tomber enceinte</li>
+<li>Douleurs pelviennes fréquentes</li>
+</ul>
+
+<p><strong>❓ Est-ce que l’endométriose peut provoquer des fausses couches ?</strong></p>
+
+<p>
+Oui, dans certains cas, l’endométriose peut perturber l’environnement interne nécessaire à une grossesse stable.
+Cela peut rendre la grossesse difficile à maintenir.
+</p>
+
+---
+
+<h3>Pourquoi l’endométriose apparaît-elle ?</h3>
+
+<p>
+Les causes exactes ne sont pas toujours connues, mais plusieurs facteurs peuvent favoriser son apparition :
+</p>
+
+<ul>
+<li>Déséquilibre hormonal</li>
+<li>Inflammation chronique</li>
+<li>Facteurs héréditaires</li>
+<li>Reflux menstruel</li>
+<li>Système immunitaire affaibli</li>
+</ul>
+
+---
+
+<h3>Quels sont les effets de l’endométriose sur la fertilité ?</h3>
+
+<ul>
+<li>Blocage des trompes</li>
+<li>Formation d’adhérences internes</li>
+<li>Diminution de la qualité des ovules</li>
+<li>Inflammation des organes reproducteurs</li>
+<li>Perturbation de l’implantation de l’embryon</li>
+</ul>
+
+---
+
+<h3>🌿 Comment les solutions naturelles du Docteur Hervé peuvent aider ?</h3>
+
+<p>
+Les solutions naturelles proposées par le Docteur Hervé sont conçues pour soutenir l’organisme en favorisant :
+</p>
+
+<ul>
+<li>La réduction progressive des inflammations internes</li>
+<li>L'amélioration de l’équilibre hormonal</li>
+<li>Le soutien du fonctionnement naturel des organes reproducteurs</li>
+<li>L'amélioration de l’environnement interne favorable à la fertilité</li>
+</ul>
+
+<p>
+Avec une utilisation régulière accompagnée de conseils adaptés, ces solutions peuvent aider à améliorer les conditions naturelles nécessaires à une conception.
+</p>
+
+---
+
+<h3>📌 Que dois-je faire si je soupçonne une endométriose ?</h3>
+
+<ul>
+<li>Consulter un professionnel de santé</li>
+<li>Faire une échographie ou une IRM</li>
+<li>Identifier le niveau de la maladie</li>
+<li>Suivre les recommandations adaptées</li>
+<li>Maintenir une bonne hygiène de vie</li>
+</ul>
+
+---
+
+<h3>📞 Que faire maintenant ?</h3>
+
+<p>
+Si vous souffrez de douleurs inexpliquées ou de difficultés à concevoir, il est important de rechercher la cause réelle du problème.
+Un accompagnement adapté peut faire une grande différence dans votre parcours vers la maternité.
+</p>
+
+<a href="#boutique" class="cta">
+Voir les solutions disponibles
+</a>
+
+</section>
+
+<section id="infections" class="section details-section">
+
+<h2>Détails complets sur les Infections qui empêchent une grossesse</h2>
+
+<!-- IMAGE EN HAUT -->
+<div class="detail-image">
+<img src="images/infections-detail.jpg" alt="Illustration des infections génitales">
+</div>
+
+<h3>Qu'est-ce qu'une infection génitale ?</h3>
+
+<p>
+Une infection génitale est la présence de microbes, bactéries ou virus dans les organes reproducteurs.
+Certaines infections peuvent être silencieuses pendant longtemps, sans symptômes visibles, mais elles peuvent provoquer des complications graves comme l'infertilité ou des fausses couches.
+</p>
+
+---
+
+<h3>❓ Si j'avais une infection, quelles questions je me poserais ?</h3>
+
+<p><strong>❓ Est-ce qu'une infection peut empêcher une femme de tomber enceinte ?</strong></p>
+
+<p>
+Oui, certaines infections peuvent provoquer une inflammation des organes reproducteurs, endommager les trompes ou perturber l’utérus, rendant la grossesse difficile.
+</p>
+
+<p><strong>❓ Est-ce qu'une infection peut provoquer des fausses couches ?</strong></p>
+
+<p>
+Oui, certaines infections peuvent affaiblir l'environnement interne nécessaire pour maintenir une grossesse, ce qui peut provoquer des fausses couches répétées.
+</p>
+
+<p><strong>❓ Est-ce qu'un homme peut être infecté sans le savoir ?</strong></p>
+
+<p>
+Oui, beaucoup d'hommes peuvent avoir une infection sans symptômes visibles.
+Cela peut réduire la qualité des spermatozoïdes et empêcher une grossesse.
+</p>
+
+---
+
+# 🦠 Types d'infections qui peuvent empêcher une grossesse
+
+<h3>1️⃣ Infections bactériennes</h3>
+
+<ul>
+<li>Infections vaginales répétées</li>
+<li>Infections de l’utérus</li>
+<li>Infections des trompes</li>
+<li>Infections urinaires fréquentes</li>
+</ul>
+
+Ces infections peuvent provoquer :
+
+<ul>
+<li>Inflammations internes</li>
+<li>Formation d’adhérences</li>
+<li>Blocage des trompes</li>
+</ul>
+
+---
+
+<h3>2️⃣ Maladies sexuellement transmissibles (MST)</h3>
+
+<p>
+Certaines infections transmises lors des rapports sexuels peuvent provoquer des complications graves.
+</p>
+
+<ul>
+<li>Infections pouvant provoquer des douleurs pelviennes</li>
+<li>Infections pouvant abîmer les trompes</li>
+<li>Infections pouvant réduire la fertilité</li>
+</ul>
+
+---
+
+<h3>3️⃣ Infections chez l’homme</h3>
+
+<p>
+Les infections peuvent également affecter les organes reproducteurs masculins.
+</p>
+
+<ul>
+<li>Diminution du nombre de spermatozoïdes</li>
+<li>Diminution de leur mobilité</li>
+<li>Altération de leur qualité</li>
+<li>Difficulté à féconder l’ovule</li>
+</ul>
+
+---
+
+<h3>4️⃣ Infections chroniques mal traitées</h3>
+
+<p>
+Certaines infections persistent pendant longtemps si elles ne sont pas correctement traitées.
+Elles peuvent provoquer des complications progressives dans les organes reproducteurs.
+</p>
+
+---
+
+# ⚠️ Signes possibles d'infection
+
+<ul>
+<li>Pertes vaginales inhabituelles</li>
+<li>Mauvaises odeurs persistantes</li>
+<li>Douleurs pelviennes</li>
+<li>Brûlures urinaires</li>
+<li>Démangeaisons fréquentes</li>
+<li>Douleurs pendant les rapports sexuels</li>
+<li>Douleurs testiculaires chez l’homme</li>
+</ul>
+
+---
+
+# 🌿 Comment les solutions naturelles du Docteur Hervé peuvent aider ?
+
+<p>
+Les solutions naturelles proposées par le Docteur Hervé visent à soutenir l'organisme en favorisant :
+</p>
+
+<ul>
+<li>Le nettoyage naturel de l’organisme</li>
+<li>La réduction des inflammations internes</li>
+<li>Le soutien du système immunitaire</li>
+<li>L'amélioration de l’environnement interne favorable à la fertilité</li>
+</ul>
+
+<p>
+Avec un accompagnement adapté et une utilisation régulière, ces solutions peuvent contribuer à améliorer les conditions naturelles nécessaires à une conception.
+</p>
+
+---
+
+# 📌 Que dois-je faire si je pense avoir une infection ?
+
+<ul>
+<li>Faire un test médical approprié</li>
+<li>Identifier le type d'infection</li>
+<li>Suivre les recommandations adaptées</li>
+<li>Maintenir une bonne hygiène intime</li>
+<li>Éviter l’automédication sans diagnostic</li>
+</ul>
+
+---
+
+<h3>📞 Que faire maintenant ?</h3>
+
+<p>
+Si vous soupçonnez une infection ou si vous avez des difficultés à concevoir, il est important d’identifier la cause réelle du problème.
+Un accompagnement adapté peut faire une grande différence dans votre parcours vers la maternité.
+</p>
+
+<a href="#boutique" class="cta">
+Voir les solutions disponibles
+</a>
+
+</section>
+
+
+<section id="temoignage" class="section" 
+style="font-family:'Times New Roman', Times, serif; padding:60px 20px; background:#f8f9f8; text-align:center;">
+
+<h2 style="color:#2c7a4b; font-size:32px; margin-bottom:10px;">
+Témoignages de nos patients
+</h2>
+
+<p style="max-width:700px; margin:auto; font-size:18px; color:#555;">
+Découvrez les témoignages vidéo de personnes ayant retrouvé la fertilité grâce aux solutions naturelles VitaPlante.
+</p>
+
+<div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:40px;">
+
+<!-- Témoignage 1 -->
+<div style="width:300px; background:white; padding:15px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.08);">
+<video width="100%" controls style="border-radius:8px;">
+<source src="videos/Ma1.mp4" type="video/mp4">
+Votre navigateur ne supporte pas la vidéo.
+</video>
+
+<p style="margin-top:10px; font-size:17px;">
+<strong>Marie – France</strong><br>
+<span style="color:#777; font-size:14px;">Trompes bouchées depuis 5 ans</span>
+</p>
+</div>
+
+<!-- Témoignage 2 -->
+<div style="width:300px; background:white; padding:15px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.08);">
+<video width="100%" controls style="border-radius:8px;">
+<source src="videos/temoignage1.mp4" type="video/mp4">
+</video>
+
+<p style="margin-top:10px; font-size:17px;">
+<strong>Sofia – Italie</strong><br>
+<span style="color:#777; font-size:14px;">Fibrome traité naturellement</span>
+</p>
+</div>
+
+<!-- Témoignage 3 -->
+<div style="width:300px; background:white; padding:15px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.08);">
+<video width="100%" controls style="border-radius:8px;">
+<source src="videos/temoignage3.mp4" type="video/mp4">
+</video>
+
+<p style="margin-top:10px; font-size:17px;">
+<strong>Amina – Maroc</strong><br>
+<span style="color:#777; font-size:14px;">Grossesse obtenue après 3 ans</span>
+</p>
+</div>
+
+</div>
+
+<!-- Bouton -->
+<div style="margin-top:40px;">
+<button onclick="alert('Vous n’avez pas l’autorisation de publier ici. Veuillez contacter notre assistant via le formulaire de contact.'); location.href='#contact';" 
+
+style="background:#2c7a4b; color:white; padding:14px 28px; border:none; border-radius:6px; font-size:16px; cursor:pointer; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+
+Ajouter votre témoignage
+
+</button>
+</div>
+
+</section>
+
+<script>
+let count = 0;
+let target = 5000;
+let compteur = document.getElementById("compteur");
+
+let interval = setInterval(() => {
+count += 25;
+compteur.innerText = count;
+
+if(count >= target){
+clearInterval(interval);
+}
+},20);
+</script>
 
   <style>
     .testimonial {
@@ -394,13 +1764,156 @@ boutique7.jpg" alt="Phytothérapie VitaPlante" class="portrait" style="max-width
       font-size: 1.5em;
       margin-right: 10px;
     }
+    .resultats{
+text-align:center;
+margin-top:40px;
+}
+
+.stats{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.stat{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+width:150px;
+}
+
+.stat h3{
+color:#4b8f4b;
+font-size:28px;
+margin:0;
+}
+
+/* ===============================
+   STYLE PROFESSIONNEL DETAILS
+=============================== */
+
+.details-section {
+
+max-width: 900px;
+
+margin: auto;
+
+padding: 25px;
+
+background: white;
+
+border-radius: 12px;
+
+box-shadow: 0 0 10px rgba(0,0,0,0.08);
+
+}
+
+
+/* TITRE PRINCIPAL */
+
+.details-section h2 {
+
+font-size: 30px;
+
+text-align: center;
+
+margin-bottom: 20px;
+
+color: #0a7cff;
+
+}
+
+
+/* IMAGE */
+
+.detail-image {
+
+text-align: center;
+
+margin-bottom: 25px;
+
+}
+
+.detail-image img {
+
+width: 100%;
+
+max-width: 450px;
+
+border-radius: 12px;
+
+}
+
+
+/* SOUS TITRES */
+
+.details-section h3 {
+
+margin-top: 25px;
+
+color: #222;
+
+font-size: 22px;
+
+border-left: 5px solid #0a7cff;
+
+padding-left: 12px;
+
+}
+
+
+/* PARAGRAPHES */
+
+.details-section p {
+
+font-size: 16px;
+
+line-height: 1.8;
+
+color: #444;
+
+}
+
+
+/* QUESTIONS */
+
+.question-box {
+
+background: #f0f6ff;
+
+padding: 15px;
+
+border-radius: 10px;
+
+margin-top: 20px;
+
+border-left: 5px solid #0a7cff;
+
+}
+
+
+/* REPONSES */
+
+.answer-box {
+
+background: #f9f9f9;
+
+padding: 15px;
+
+border-radius: 10px;
+
+margin-top: 10px;
+
+}
   </style>
 
     </section>
         
         
 
-     <section id="Astuces" class="section">
+     <section id="astuces" class="section">
   <h2>Astuces naturelles</h2>
 
   <ul class="astuce-menu">
@@ -583,6 +2096,28 @@ POSOLOGIE: boire un demi-verre de l'eau de la papaye tous les matins, après-mid
   </p>
 </section>
 
+<div id="aiGuide" class="ai-guide">
+
+<span class="ai-close"
+onclick="document.getElementById('aiGuide').style.display='none'">
+
+×
+
+</span>
+
+<p id="aiText">
+Bienvenue sur notre site.
+</p>
+
+<a id="aiButton"
+onclick="navigateToSection()"
+class="ai-btn">
+
+Voir détails
+
+</a>
+
+</div>
 <style>
   h2 {
     text-align: center;
@@ -606,9 +2141,160 @@ POSOLOGIE: boire un demi-verre de l'eau de la papaye tous les matins, après-mid
     margin-left: 10%;
     margin-right: 10%;
   }
-</style>
+  .products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:30px;
+}
 
-<script>
+.product-card{
+background:white;
+padding:15px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+text-align:center;
+transition:0.3s;
+}
+
+.product-card:hover{
+transform:translateY(-5px);
+}
+
+/* =============================
+   SECTION DETAILS MALADIES
+============================= */
+
+.details-section {
+
+max-width: 900px;
+margin: auto;
+padding: 20px;
+
+background: #ffffff;
+
+line-height: 1.7;
+
+font-size: 16px;
+
+}
+
+
+/* TITRES PRINCIPAUX */
+
+.details-section h2 {
+
+text-align: center;
+
+font-size: 28px;
+
+margin-bottom: 20px;
+
+color: #0a7cff;
+
+}
+
+
+/* SOUS-TITRES */
+
+.details-section h3 {
+
+margin-top: 25px;
+
+margin-bottom: 10px;
+
+color: #333;
+
+font-size: 20px;
+
+border-left: 4px solid #0a7cff;
+
+padding-left: 10px;
+
+}
+
+
+/* PARAGRAPHES */
+
+.details-section p {
+
+margin-bottom: 15px;
+
+color: #444;
+
+}
+
+
+/* LISTES */
+
+.details-section ul {
+
+margin-left: 20px;
+
+margin-bottom: 15px;
+
+}
+
+.details-section li {
+
+margin-bottom: 8px;
+
+}
+
+
+/* IMAGE EN HAUT */
+
+.detail-image {
+
+text-align: center;
+
+margin-bottom: 20px;
+
+}
+
+.detail-image img {
+
+width: 100%;
+
+max-width: 500px;
+
+border-radius: 10px;
+
+box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+}
+
+
+/* BOUTON ACTION */
+
+.details-section .cta {
+
+display: inline-block;
+
+margin-top: 20px;
+
+padding: 12px 18px;
+
+background: #0a7cff;
+
+color: white;
+
+text-decoration: none;
+
+border-radius: 8px;
+
+font-weight: bold;
+
+}
+
+.details-section .cta:hover {
+
+background: #0056b3;
+
+}
+  </style>
+
+      <script>
   function showAstuce(id) {
     let elements = document.querySelectorAll('.astuce-content');
     elements.forEach(el => el.style.display = 'none');
@@ -618,8 +2304,9 @@ POSOLOGIE: boire un demi-verre de l'eau de la papaye tous les matins, après-mid
   }
 </script> 
   
-
-
+ <section id="details" class="section">  
+<li> Bonjour</li>
+</section>
       <section id="contact" class="section">
         <h2>Contactez-nous</h2>
         <form action="https://formsubmit.co/vitaplante01@gmail.com" method="POST">
@@ -701,35 +2388,477 @@ POSOLOGIE: boire un demi-verre de l'eau de la papaye tous les matins, après-mid
   </section>
 
   
-  <script>
-    function toggleMenu() {
-      const sidebar = document.getElementById('sidebar');
-      sidebar.style.display = (sidebar.style.display === 'block') ? 'none' : 'block';
-    }
+<script>
 
-    function showSection(id) {
-      document.querySelectorAll('.section').forEach(section => {
-        section.style.display = 'none';
-      });
-      const s = document.getElementById(id);
-      if(s) s.style.display = 'block';
-      document.getElementById('sidebar').style.display = 'none';
-    }
+/* =============================
+   MENU ET SECTIONS
+============================= */
 
-    document.addEventListener('DOMContentLoaded', () => {
-      showSection('accueil');
+function toggleMenu() {
+  const sidebar = document.getElementById('sidebar');
+  sidebar.style.display =
+    (sidebar.style.display === 'block')
+    ? 'none'
+    : 'block';
+}
+
+function showSection(id) {
+
+  document.querySelectorAll('.section')
+    .forEach(section => {
+      section.style.display = 'none';
     });
 
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'fr',
-        includedLanguages: 'en,fr,es,de,it,pt,en',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_translate_element');
-    }
- 
-  </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  
+  const s = document.getElementById(id);
+  if (s) s.style.display = 'block';
+
+  const sidebar =
+    document.getElementById('sidebar');
+
+  if (sidebar)
+    sidebar.style.display = 'none';
+
+}
+
+/* Chargement */
+
+document.addEventListener(
+  'DOMContentLoaded',
+  () => {
+
+    showSection('accueil');
+    displayProducts(1);
+
+  }
+);
+
+
+/* =============================
+   GOOGLE TRANSLATE
+============================= */
+
+function googleTranslateElementInit() {
+
+  new google.translate.TranslateElement({
+
+    pageLanguage: 'fr',
+
+    includedLanguages:
+      'en,fr,es,de,it,pt',
+
+    layout:
+      google.translate.TranslateElement
+      .InlineLayout.SIMPLE
+
+  },
+
+  'google_translate_element');
+
+}
+
+
+/* =============================
+   BOUTIQUE
+============================= */
+
+const products = [
+
+{name:"Kystes",
+desc:"Description courte Kystes",
+price:"10 000 FCFA",
+img:"images/kystes.png",
+link:"https://wa.me/2290156077109"},
+
+{name:"Trompes bouchées",
+desc:"Description courte Trompes",
+price:"12 000 FCFA",
+img:"images/Trompes.png",
+link:"https://wa.me/2290156077109"},
+
+{name:"Programme Fertilité Couple",
+desc:"Maximise les chances",
+price:"30 000 FCFA",
+img:"images/fertilité.png",
+link:"https://wa.me/2290156077109"},
+
+{name:"Azoospermie",
+desc:"Production et augmentation du spermatozoïde",
+price:"25 000 FCFA",
+img:"images/Azoospermie.png",
+link:"https://wa.me/2290156077109"},
+
+{name:"La qualité de mon sperme",
+desc:"Favorise l'amélioration du sperme",
+price:"25 000 FCFA",
+img:"images/La qualité de mon sperme.png",
+link:"https://wa.me/2290156077109"},
+
+{name:"Fibrome",
+desc:"Le traitement vise à assécher les fibromes...",
+price:"25 000 FCFA",
+img:"images/Fibrome.png",
+link:"https://wa.me/2290156077109"},
+
+{name:"Beurre de qualité",
+desc:"Hydratation intense...",
+price:"25 000 FCFA",
+img:"images/Beurre.png",
+link:"https://wa.me/2290156077109"},
+
+{name:"Contre infections",
+desc:"Formule naturelle conçue pour aider à lutter contre les infections féminines pouvant perturber la fertilité et empêcher une grossesse.Soutient la santé de l’utérus et aide à maintenir un environnement favorable à la conceptio",
+price:"25 000 FCFA",
+img:"images/Infections.png",
+link:"https://wa.me/2290156077109"},
+
+...Array(20).fill({
+
+name:"Produit Fertilité",
+desc:"Solution naturelle",
+price:"8 000 FCFA",
+img:"images/boutique1.jpg",
+link:"https://wa.me/2290156077109"
+
+})
+
+];
+
+
+const perPage = 8;
+let currentPage = 1;
+
+
+/* Affichage produits */
+
+function displayProducts(page) {
+
+  const container =
+    document.getElementById(
+      "products-container"
+    );
+
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  let start =
+    (page - 1) * perPage;
+
+  let end =
+    start + perPage;
+
+  products
+    .slice(start, end)
+    .forEach(p => {
+
+container.innerHTML += `
+
+<div class="product-card">
+
+<img src="${p.img}"
+alt="${p.name}">
+
+<h3>${p.name}</h3>
+
+<p class="short-desc">
+
+${p.desc.substring(0,80)}...
+
+</p>
+
+<p class="full-desc"
+style="display:none;">
+
+${p.desc}
+
+</p>
+
+<button
+class="more-btn"
+onclick="toggleDesc(this,'${p.name}')">
+
+En savoir plus
+
+</button>
+
+<div class="price">
+
+${p.price}
+
+</div>
+
+<a href="${p.link}"
+class="cta">
+
+Commander
+
+</a>
+
+</div>
+
+`;
+
+});
+
+showPagination();
+
+}
+
+
+/* Pagination */
+
+function showPagination() {
+
+const total =
+Math.ceil(products.length / perPage);
+
+const pagination =
+document.getElementById("pagination");
+
+if (!pagination) return;
+
+pagination.innerHTML = "";
+
+for (let i=1;i<=total;i++) {
+
+pagination.innerHTML +=
+
+`<span
+class="${
+i===currentPage?'active':''
+}"
+onclick="goToPage(${i})">
+
+${i}
+
+</span>`;
+
+}
+
+}
+
+function goToPage(page) {
+
+currentPage = page;
+displayProducts(page);
+
+}
+
+
+/* =============================
+   DESCRIPTION PRODUIT
+============================= */
+
+function toggleDesc(button, productName) {
+
+const card =
+button.parentElement;
+
+const shortDesc =
+card.querySelector(".short-desc");
+
+const fullDesc =
+card.querySelector(".full-desc");
+
+if (fullDesc.style.display === "none") {
+
+fullDesc.style.display = "block";
+shortDesc.style.display = "none";
+
+button.textContent =
+"Réduire";
+
+/* Lance suggestion produit */
+
+setTimeout(() => {
+
+suggestByProduct(productName);
+
+}, 3000);
+
+}
+
+else {
+
+fullDesc.style.display = "none";
+shortDesc.style.display = "block";
+
+button.textContent =
+"En savoir plus";
+
+}
+
+}
+
+
+/* =============================
+   GUIDE IA
+============================= */
+
+function showAIGuide(
+message,
+sectionId,
+buttonText
+) {
+
+const box =
+document.getElementById("aiGuide");
+
+if (!box) return;
+
+const text =
+document.getElementById("aiText");
+
+const btn =
+document.getElementById("aiButton");
+
+text.innerHTML =
+message;
+
+/* Sauvegarde section */
+
+btn.setAttribute(
+"data-section",
+sectionId
+);
+
+btn.textContent =
+buttonText;
+
+box.style.display =
+"block";
+
+/* Auto fermeture */
+
+setTimeout(() => {
+
+box.style.display="none";
+
+}, 8000);
+
+}
+
+
+/* Navigation guide */
+
+function navigateToSection() {
+
+const btn =
+document.getElementById("aiButton");
+
+const target =
+btn.getAttribute(
+"data-section"
+);
+
+if (target) {
+
+showSection(target);
+
+}
+
+}
+
+
+/* Suggestions par produit */
+
+function suggestByProduct(productName) {
+
+if (productName === "Fibrome")
+
+showAIGuide(
+
+"Souhaitez-vous en savoir plus sur les Fibromes ?",
+
+"fibromes",
+
+"Voir les détails"
+
+);
+
+
+else if (productName === "Kystes")
+
+showAIGuide(
+
+"Voulez-vous en savoir plus sur les Kystes ?",
+
+"kystes",
+
+"Voir les détails"
+
+);
+
+
+else if (productName === "Trompes bouchées")
+
+showAIGuide(
+
+"Voulez-vous en savoir plus sur les Trompes bouchées ?",
+
+"trompes",
+
+"Voir les détails"
+
+);
+
+}
+
+
+/* Suggestion générale après 1 min */
+
+setTimeout(() => {
+
+showAIGuide(
+
+"Souhaitez-vous découvrir nos détails médicaux ?",
+
+"details",
+
+"Voir les détails"
+
+);
+
+}, 60000);
+
+let slides = document.querySelectorAll(".slide");
+let current = 0;
+let dotsContainer = document.querySelector(".dots");
+
+slides.forEach((_, i) => {
+  let dot = document.createElement("span");
+  dot.addEventListener("click", () => showSlide(i));
+  dotsContainer.appendChild(dot);
+});
+
+let dots = document.querySelectorAll(".dots span");
+
+function showSlide(index) {
+  slides[current].classList.remove("active");
+  dots[current].classList.remove("active");
+
+  current = index;
+
+  slides[current].classList.add("active");
+  dots[current].classList.add("active");
+}
+
+document.querySelector(".next").onclick = () => {
+  showSlide((current + 1) % slides.length);
+};
+
+document.querySelector(".prev").onclick = () => {
+  showSlide((current - 1 + slides.length) % slides.length);
+};
+
+setInterval(() => {
+  showSlide((current + 1) % slides.length);
+}, 5000);
+
+showSlide(0);
+
+
+</script>
 </body>
 </html> 
+  
