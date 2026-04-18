@@ -2416,6 +2416,13 @@ function showSection(id) {
   if (sidebar)
     sidebar.style.display = 'none';
 
+  /* AJOUT HISTORIQUE */
+  history.pushState(
+    { section: id },
+    "",
+    "#" + id
+  );
+
 }
 
 /* Chargement */
@@ -2854,6 +2861,27 @@ setInterval(() => {
 }, 5000);
 
 showSlide(0);
+  /* Gestion bouton retour téléphone */
+
+window.onpopstate = function(event) {
+
+  if (event.state &&
+      event.state.section) {
+
+    document.querySelectorAll('.section')
+      .forEach(section => {
+        section.style.display = 'none';
+      });
+
+    const s =
+      document.getElementById(
+        event.state.section
+      );
+
+    if (s) s.style.display = 'block';
+  }
+
+};
 </script>
 </body>
 </html> 
