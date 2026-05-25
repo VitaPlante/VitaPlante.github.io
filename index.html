@@ -984,40 +984,757 @@
   </div>
 
   <script>
-    function toggleMenu() {
-      const sidebar = document.getElementById('sidebar');
-      sidebar.style.display = sidebar.style.display === 'block' ? 'none' : 'block';
-    }
 
-    function showSection(sectionId) {
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(section => section.style.display = 'none');
-      
-      const activeSection = document.getElementById(sectionId);
-      if (activeSection) {
-        activeSection.style.display = 'block';
-      }
+/* =============================
+   MENU ET SECTIONS
+============================= */
 
-      const sidebar = document.getElementById('sidebar');
-      sidebar.style.display = 'none';
-      
-      window.scrollTo(0, 0);
-    }
+function toggleMenu(){
 
-    function searchMaladie() {
-      const input = document.getElementById('searchInput').value.toLowerCase();
-      const maladies = document.querySelectorAll('.maladie-item');
-      
-      maladies.forEach(maladie => {
-        const text = maladie.textContent.toLowerCase();
-        maladie.style.display = text.includes(input) ? 'block' : 'none';
-      });
-    }
+let sidebar =
+document.getElementById('sidebar');
 
-    // Initialize first section
-    document.addEventListener('DOMContentLoaded', () => {
-      showSection('accueil');
-    });
-  </script>
-</body>  
-</html>
+/* SI MENU OUVERT */
+
+if(sidebar.style.display === 'block'){
+
+sidebar.style.display = 'none';
+
+}
+
+/* SI MENU FERMÉ */
+
+else{
+
+/* Remonter automatiquement en haut */
+
+window.scrollTo({
+
+top:0,
+
+behavior:'smooth'
+
+});
+
+/* Petit délai pour laisser le scroll finir */
+
+setTimeout(()=>{
+
+sidebar.style.display = 'block';
+
+},300);
+
+}
+
+}
+
+
+/* =============================
+   HISTORIQUE DES SECTIONS
+============================= */
+
+let sectionHistory = [];
+
+
+/* =============================
+   AFFICHER LES SECTIONS
+============================= */
+
+function showSection(id){
+
+/* Sauvegarder historique */
+
+if(
+sectionHistory[
+sectionHistory.length - 1
+] !== id
+){
+
+sectionHistory.push(id);
+
+}
+
+/* Fermer toutes les sections */
+
+document.querySelectorAll('.section')
+.forEach(section => {
+
+section.style.display = 'none';
+
+section.classList.remove('active');
+
+});
+
+/* Afficher section choisie */
+
+let activeSection =
+document.getElementById(id);
+
+if(activeSection){
+
+activeSection.style.display = 'block';
+
+activeSection.classList.add('active');
+
+}
+
+/* Remonter en haut */
+
+window.scrollTo({
+
+top:0,
+
+behavior:'smooth'
+
+});
+
+/* Fermer automatiquement menu */
+
+let sidebar =
+document.getElementById('sidebar');
+
+if(sidebar){
+
+sidebar.style.display = 'none';
+
+}
+
+/* Gestion bouton retour */
+
+let backBtn =
+document.getElementById(
+'topBackBtn'
+);
+
+if(backBtn){
+
+if(id === 'accueil'){
+
+backBtn.style.display = 'none';
+
+}else{
+
+backBtn.style.display = 'block';
+
+}
+
+}
+
+}
+
+
+/* =============================
+   CHARGEMENT
+============================= */
+
+document.addEventListener(
+'DOMContentLoaded',
+() => {
+
+showSection('accueil');
+
+displayProducts(1);
+
+}
+);
+
+
+/* =============================
+   GOOGLE TRANSLATE
+============================= */
+
+function googleTranslateElementInit() {
+
+new google.translate.TranslateElement({
+
+pageLanguage:'fr',
+
+includedLanguages:
+'en,fr,es,de,it,pt',
+
+layout:
+google.translate.TranslateElement
+.InlineLayout.SIMPLE
+
+},
+
+'google_translate_element');
+
+}
+
+
+/* =============================
+   BOUTIQUE
+============================= */
+
+const products = [
+
+{name:"Kystes",
+desc:"Description courte Kystes",
+price:"10 000 FCFA",
+img:"images/kystes.png",
+link:"https://wa.me/2290156077109"},
+
+{name:"Trompes bouchées",
+desc:"Description courte Trompes",
+price:"12 000 FCFA",
+img:"images/Trompes.png",
+link:"https://wa.me/2290156077109"},
+
+{name:"Programme Fertilité Couple",
+desc:"Maximise les chances",
+price:"30 000 FCFA",
+img:"images/fertilité.png",
+link:"https://wa.me/2290156077109"},
+
+{name:"Azoospermie",
+desc:"Production et augmentation du spermatozoïde",
+price:"25 000 FCFA",
+img:"images/Azoospermie.png",
+link:"https://wa.me/2290156077109"},
+
+{name:"La qualité de mon sperme",
+desc:"Favorise l'amélioration du sperme",
+price:"25 000 FCFA",
+img:"images/La qualité de mon sperme.png",
+link:"https://wa.me/2290156077109"},
+
+{name:"Fibrome",
+desc:"Le traitement vise à assécher les fibromes...",
+price:"25 000 FCFA",
+img:"images/Fibrome.png",
+link:"https://wa.me/2290156077109"},
+
+{name:"Beurre de qualité",
+desc:"Hydratation intense...",
+price:"25 000 FCFA",
+img:"images/Beurre.png",
+link:"https://wa.me/2290156077109"},
+
+{name:"Contre infections",
+desc:"Formule naturelle conçue pour aider à lutter contre les infections féminines pouvant perturber la fertilité et empêcher une grossesse.",
+price:"25 000 FCFA",
+img:"images/Infections.png",
+link:"https://wa.me/2290156077109"},
+{name:"Gélule Naturelle",
+desc:"Gélule naturelle 10x2, réduit l'inflammation et régénère les tissus attaqués de la région vulve,purifiant le sang pour un soulagement récent et sur longue durée. Prenez deux matins et deux soir à l'âge de ménopause. Gélule extrait direct 100 %  naturelle..",
+price:"25 000 FCFA",
+img:"images/Lichen 1.jpg",
+link:"https://wa.me/2290156077109"},
+
+  {name:"Huile Anti-Lichen",
+desc:"Mettez une goutte dans l'eau après la douche et reprenez vos toilettes intimes deux fois par jour.",
+price:"40 000 FCFA",
+img:"images/Lichen 2.jpg",
+link:"https://wa.me/2290156077109"},
+
+{name:" SIROP BIOFERXIL AZONLÈKO",
+desc:"Propriété anti protecteur, Soulage rapidement les symptômes du lichen scléreux vulvaire. Il protège les tissus sains de la région vulve et renforce le système immunitaire chez les personnes atteintes.",
+price:"50 000 FCFA",
+img:"images/Lichen 3.jpg",
+link:"https://wa.me/2290156077109"}
+  
+];
+
+
+/* =============================
+   PAGINATION
+============================= */
+
+const perPage = 8;
+
+let currentPage = 1;2;
+
+
+/* =============================
+   AFFICHAGE PRODUITS
+============================= */
+
+function displayProducts(page){
+
+const container =
+document.getElementById(
+"products-container"
+);
+
+if(!container) return;
+
+container.innerHTML = "";
+
+let start =
+(page - 1) * perPage;
+
+let end =
+start + perPage;
+
+products
+.slice(start,end)
+.forEach(p => {
+
+container.innerHTML += `
+
+<div class="product-card">
+
+<img src="${p.img}"
+alt="${p.name}">
+
+<h3>${p.name}</h3>
+
+<p class="short-desc">
+
+${p.desc.substring(0,80)}...
+
+</p>
+
+<p class="full-desc"
+style="display:none;">
+
+${p.desc}
+
+</p>
+
+<button
+class="more-btn"
+onclick="toggleDesc(this,'${p.name}')">
+
+En savoir plus
+
+</button>
+
+<div class="price">
+
+${p.price}
+
+</div>
+
+<a href="${p.link}"
+class="cta">
+
+Commander
+
+</a>
+
+</div>
+
+`;
+
+});
+
+showPagination();
+
+}
+
+
+/* =============================
+   PAGINATION
+============================= */
+
+function showPagination(){
+
+const total =
+Math.ceil(products.length / perPage);
+
+const pagination =
+document.getElementById(
+"pagination"
+);
+
+if(!pagination) return;
+
+pagination.innerHTML = "";
+
+for(let i=1;i<=total;i++){
+
+pagination.innerHTML +=
+
+`<span
+class="${
+i===currentPage?'active':''
+}"
+onclick="goToPage(${i})">
+
+${i}
+
+</span>`;
+
+}
+
+}
+
+function goToPage(page){
+
+currentPage = page;
+
+displayProducts(page);
+
+}
+
+
+/* =============================
+   DESCRIPTION PRODUIT
+============================= */
+
+function toggleDesc(button,productName){
+
+const card =
+button.parentElement;
+
+const shortDesc =
+card.querySelector(".short-desc");
+
+const fullDesc =
+card.querySelector(".full-desc");
+
+if(fullDesc.style.display === "none"){
+
+fullDesc.style.display = "block";
+
+shortDesc.style.display = "none";
+
+button.textContent =
+"Réduire";
+
+setTimeout(() => {
+
+suggestByProduct(productName);
+
+},3000);
+
+}else{
+
+fullDesc.style.display = "none";
+
+shortDesc.style.display = "block";
+
+button.textContent =
+"En savoir plus";
+
+}
+
+}
+
+
+/* =============================
+   GUIDE IA
+============================= */
+
+function showAIGuide(
+message,
+sectionId,
+buttonText
+){
+
+const box =
+document.getElementById("aiGuide");
+
+if(!box) return;
+
+const text =
+document.getElementById("aiText");
+
+const btn =
+document.getElementById("aiButton");
+
+text.innerHTML = message;
+
+btn.setAttribute(
+"data-section",
+sectionId
+);
+
+btn.textContent = buttonText;
+
+box.style.display = "block";
+
+setTimeout(() => {
+
+box.style.display = "none";
+
+},8000);
+
+}
+
+
+/* =============================
+   NAVIGATION GUIDE
+============================= */
+
+function navigateToSection(){
+
+const btn =
+document.getElementById("aiButton");
+
+const target =
+btn.getAttribute(
+"data-section"
+);
+
+if(target){
+
+showSection(target);
+
+}
+
+}
+
+
+/* =============================
+   SUGGESTION PRODUITS
+============================= */
+
+function suggestByProduct(productName){
+
+if(productName === "Fibrome")
+
+showAIGuide(
+
+"Souhaitez-vous en savoir plus sur les Fibromes ?",
+
+"fibromes",
+
+"Voir les détails"
+
+);
+
+else if(productName === "Kystes")
+
+showAIGuide(
+
+"Voulez-vous en savoir plus sur les Kystes ?",
+
+"kystes",
+
+"Voir les détails"
+
+);
+
+else if(productName === "Trompes bouchées")
+
+showAIGuide(
+"Voulez-vous en savoir plus sur les Trompes bouchées ?",
+
+"trompes",
+
+"Voir les détails"
+
+);
+
+}
+
+
+/* =============================
+   SUGGESTION AUTOMATIQUE
+============================= */
+
+setTimeout(() => {
+
+showAIGuide(
+
+"Souhaitez-vous découvrir nos détails médicaux ?",
+
+"details",
+
+"Voir les détails"
+
+);
+
+},60000);
+
+
+/* =============================
+   SLIDER
+============================= */
+
+let slides =
+document.querySelectorAll(".slide");
+
+let current = 0;
+
+let dotsContainer =
+document.querySelector(".dots");
+
+slides.forEach((_,i) => {
+
+let dot =
+document.createElement("span");
+
+dot.addEventListener(
+"click",
+() => showSlide(i)
+);
+
+dotsContainer.appendChild(dot);
+
+});
+
+let dots =
+document.querySelectorAll(
+".dots span"
+);
+
+function showSlide(index){
+
+slides[current]
+.classList.remove("active");
+
+dots[current]
+.classList.remove("active");
+
+current = index;
+
+slides[current]
+.classList.add("active");
+
+dots[current]
+.classList.add("active");
+
+}
+
+document.querySelector(".next")
+.onclick = () => {
+
+showSlide(
+(current + 1)
+% slides.length
+);
+
+};
+
+document.querySelector(".prev")
+.onclick = () => {
+
+showSlide(
+(current - 1 + slides.length)
+% slides.length
+);
+
+};
+
+setInterval(() => {
+
+showSlide(
+(current + 1)
+% slides.length
+);
+
+},5000);
+
+showSlide(0);
+
+
+/* =============================
+   RETOUR NAVIGATEUR
+============================= */
+
+window.onpopstate = function(event){
+
+if(sectionHistory.length > 1){
+
+sectionHistory.pop();
+
+let previous =
+sectionHistory[
+sectionHistory.length - 1
+];
+
+showSection(previous);
+
+}
+
+};
+
+
+/* =============================
+   BOUTON RETOUR
+============================= */
+
+function goBackPage(){
+
+if(sectionHistory.length > 1){
+
+/* Supprimer actuelle */
+
+sectionHistory.pop();
+
+/* Récupérer précédente */
+
+let previous =
+sectionHistory[
+sectionHistory.length - 1
+];
+
+/* Retour */
+
+showSection(previous);
+
+}
+
+}
+
+
+/* =============================
+   RECHERCHE MALADIES
+============================= */
+
+function searchMaladie(){
+
+let input =
+document.getElementById(
+'searchInput'
+).value.toLowerCase();
+
+if(input.includes('fibrome')){
+
+showSection('fibromes');
+
+}
+
+else if(input.includes('myome')){
+
+showSection('fibromes');
+
+}
+
+else if(input.includes('kyste')){
+
+showSection('kystes');
+
+}
+
+else if(input.includes('trompe')){
+
+showSection('trompes');
+
+}
+
+else if(input.includes('endometriose')){
+
+showSection('endometriose');
+
+}
+
+else if(input.includes('infection')){
+
+showSection('infections');
+
+}
+
+else if(input.includes('lichen')){
+
+showSection('lichen');
+
+}
+
+}
+
+</script>
+
+<div id="topBackBtn"
+onclick="goBackPage()">
+
+⬅ Retour
+
+</div>
+</body>
+</html> 
+  
