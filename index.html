@@ -2654,6 +2654,28 @@ google.translate.TranslateElement
    BOUTIQUE
 ============================= */
 
+const imagesToPreload = [
+  "images/kystes.png",
+  "images/Trompes.png",
+  "images/fertilité.png",
+  "images/Azoospermie.png",
+  "images/La qualité de mon sperme.png",
+  "images/fibrome.png",
+  "images/Beurre.png",
+  "images/Infections.png",
+  "images/Lichen 1.jpg",
+  "images/Lichen 2.jpg",
+  "images/Lichen 3.jpg"
+];
+
+imagesToPreload.forEach(src => {
+  const img = new Image();
+  img.src = src;
+});
+
+
+
+  
 const products = [
 
 {name:"Kystes",
